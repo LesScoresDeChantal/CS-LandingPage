@@ -1,0 +1,12 @@
+export { Header } from "./header";
+export { HeroSection } from "./hero-section";
+export { FeaturesSection } from "./features-section";
+export { HowItWorksSection } from "./how-it-works-section";
+export { AnalysisCategoriesSection } from "./analysis-categories-section";
+export { TestimonialsSection } from "./testimonials-section";
+export { MomentsSection } from "./moments-section";
+export { EducationSection } from "./education-section";
+export { PricingSection } from "./pricing-section";
+export { FAQSection } from "./faq-section";
+export { CTASection } from "./cta-section";
+export { Footer } from "./footer";

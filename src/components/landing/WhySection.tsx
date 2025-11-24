@@ -88,11 +88,9 @@ export function WhySection() {
           transition={{ delay: 0.4 }}
           className="text-center"
         >
-          <div className="inline-block bg-gradient-to-r from-purple-900/30 to-blue-900/30 border border-purple-500/30 rounded-2xl px-8 py-6">
-            <p className="text-xl sm:text-2xl font-semibold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
-              → Less emotion. More clarity. Better decisions.
-            </p>
-          </div>
+          <p className="text-xl sm:text-2xl font-semibold bg-linear-to-r from-white to-gray-300 bg-clip-text text-transparent">
+            Less emotion. More clarity. Better decisions.
+          </p>
         </motion.div>
       </div>
     </section>

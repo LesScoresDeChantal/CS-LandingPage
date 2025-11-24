@@ -18,56 +18,56 @@ const categories = [
     category: "Alerts",
     whatYouLearn: "Unusual on-chain and off-chain activity",
     whyItMatters: "Spot moves before the market reacts",
-    gradient: "from-red-500 to-orange-500",
+    gradient: "from-purple-600 to-purple-500",
   },
   {
     icon: Users,
     category: "Community",
     whatYouLearn: "Growth, sentiment, engagement",
     whyItMatters: "A weak community = slow death",
-    gradient: "from-blue-500 to-cyan-500",
+    gradient: "from-purple-600 to-purple-500",
   },
   {
     icon: Droplets,
     category: "Liquidity",
     whatYouLearn: "Volume, TVL, active addresses",
     whyItMatters: "No liquidity = no entry or exit",
-    gradient: "from-cyan-500 to-teal-500",
+    gradient: "from-purple-600 to-purple-500",
   },
   {
     icon: TrendingUp,
     category: "Momentum",
     whatYouLearn: "Who's buying/selling right now",
     whyItMatters: "Avoid being the last one in",
-    gradient: "from-green-500 to-emerald-500",
+    gradient: "from-purple-600 to-purple-500",
   },
   {
     icon: Lock,
     category: "Security",
     whatYouLearn: "Audits, risks, vulnerabilities",
     whyItMatters: "Never buy a future hack again",
-    gradient: "from-yellow-500 to-orange-500",
+    gradient: "from-purple-600 to-purple-500",
   },
   {
     icon: Code,
     category: "Technology",
     whatYouLearn: "Code quality & innovation",
     whyItMatters: "Real projects innovate early",
-    gradient: "from-purple-500 to-pink-500",
+    gradient: "from-purple-600 to-purple-500",
   },
   {
     icon: Coins,
     category: "Tokenomics",
     whatYouLearn: "Inflation, utility, distribution",
     whyItMatters: "Avoid endless sell pressure",
-    gradient: "from-pink-500 to-rose-500",
+    gradient: "from-purple-600 to-purple-500",
   },
   {
     icon: Newspaper,
     category: "News",
     whatYouLearn: "Structured impact analysis",
     whyItMatters: "Understand what moves prices",
-    gradient: "from-indigo-500 to-purple-500",
+    gradient: "from-purple-600 to-purple-500",
   },
 ];
 
@@ -99,9 +99,15 @@ export function AnalysisTable() {
           >
             {/* Table header */}
             <div className="grid grid-cols-3 gap-4 p-6 bg-linear-to-r from-purple-900/30 to-blue-900/30 border-b border-gray-800">
-              <div className="text-purple-400 font-semibold text-lg">Category</div>
-              <div className="text-purple-400 font-semibold text-lg">What You Learn</div>
-              <div className="text-purple-400 font-semibold text-lg">Why It Matters</div>
+              <div className="text-purple-400 font-semibold text-lg">
+                Category
+              </div>
+              <div className="text-purple-400 font-semibold text-lg">
+                What You See
+              </div>
+              <div className="text-purple-400 font-semibold text-lg">
+                Why It Matters
+              </div>
             </div>
 
             {/* Table rows */}
@@ -116,10 +122,14 @@ export function AnalysisTable() {
                 className="grid grid-cols-3 gap-4 p-6 border-b border-gray-800/50 last:border-b-0 transition-colors"
               >
                 <div className="flex items-center gap-3">
-                  <div className={`p-2 rounded-lg bg-linear-to-br ${item.gradient}`}>
+                  <div
+                    className={`p-2 rounded-lg bg-linear-to-br ${item.gradient}`}
+                  >
                     <item.icon className="w-5 h-5 text-white" />
                   </div>
-                  <span className="font-semibold text-white">{item.category}</span>
+                  <span className="font-semibold text-white">
+                    {item.category}
+                  </span>
                 </div>
                 <div className="text-gray-400">{item.whatYouLearn}</div>
                 <div className="text-gray-300">{item.whyItMatters}</div>
@@ -140,18 +150,26 @@ export function AnalysisTable() {
               className="bg-gray-900/50 border border-gray-800 rounded-2xl p-6 backdrop-blur-sm"
             >
               <div className="flex items-center gap-3 mb-4">
-                <div className={`p-3 rounded-xl bg-linear-to-br ${item.gradient}`}>
+                <div
+                  className={`p-3 rounded-xl bg-linear-to-br ${item.gradient}`}
+                >
                   <item.icon className="w-6 h-6 text-white" />
                 </div>
-                <h3 className="font-bold text-xl text-white">{item.category}</h3>
+                <h3 className="font-bold text-xl text-white">
+                  {item.category}
+                </h3>
               </div>
               <div className="space-y-3">
                 <div>
-                  <div className="text-sm text-purple-400 font-semibold mb-1">What You Learn</div>
+                  <div className="text-sm text-purple-400 font-semibold mb-1">
+                    What You Learn
+                  </div>
                   <div className="text-gray-400">{item.whatYouLearn}</div>
                 </div>
                 <div>
-                  <div className="text-sm text-purple-400 font-semibold mb-1">Why It Matters</div>
+                  <div className="text-sm text-purple-400 font-semibold mb-1">
+                    Why It Matters
+                  </div>
                   <div className="text-gray-300">{item.whyItMatters}</div>
                 </div>
               </div>

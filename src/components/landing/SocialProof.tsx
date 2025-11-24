@@ -10,7 +10,7 @@ const testimonials = [
     role: "Long-term investor",
   },
   {
-    quote: "Finally—data that kills emotional decision-making.",
+    quote: "Finally data that kills emotional decision-making.",
     author: "Manon",
     role: "Swing trader",
   },
@@ -37,7 +37,6 @@ export function SocialProof() {
           <h2 className="text-4xl sm:text-5xl font-bold mb-4 bg-linear-to-r from-white to-gray-300 bg-clip-text text-transparent">
             ❤️ Social Proof
           </h2>
-          <p className="text-gray-500 italic">(Generic version — replace with real Telegram screenshots later)</p>
         </motion.div>
 
         <div className="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto mb-16">
@@ -55,15 +54,22 @@ export function SocialProof() {
               <div className="relative bg-linear-to-b from-gray-900/80 to-gray-950/80 border border-gray-800 rounded-2xl p-8 backdrop-blur-sm h-full">
                 <div className="flex gap-1 mb-4">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 fill-yellow-500 text-yellow-500" />
+                    <Star
+                      key={i}
+                      className="w-5 h-5 fill-yellow-500 text-yellow-500"
+                    />
                   ))}
                 </div>
                 <blockquote className="text-lg text-gray-300 mb-6 leading-relaxed">
                   &quot;{testimonial.quote}&quot;
                 </blockquote>
                 <div className="pt-4 border-t border-gray-800">
-                  <div className="font-semibold text-white">{testimonial.author}</div>
-                  <div className="text-sm text-gray-500">{testimonial.role}</div>
+                  <div className="font-semibold text-white">
+                    {testimonial.author}
+                  </div>
+                  <div className="text-sm text-gray-500">
+                    {testimonial.role}
+                  </div>
                 </div>
               </div>
             </motion.div>
@@ -81,16 +87,37 @@ export function SocialProof() {
             <h3 className="text-3xl sm:text-4xl font-bold text-white mb-8 text-center">
               💥 The moments you&apos;ll love CryptoScores the most
             </h3>
-            
+
             <div className="grid md:grid-cols-2 gap-6">
               {[
-                { text: "When a crypto pumps and you want to know", highlight: "if it's real" },
-                { text: "When your favourite alt starts dropping and you wonder", highlight: "if you should sell" },
-                { text: "When you want to find", highlight: "fast-moving opportunities before everyone else" },
-                { text: "When you need to check", highlight: "if a project is secure or a ticking bomb" },
-                { text: "When a friend talks to you about", highlight: "a project you never heard before" },
-                { text: "When you want to manage your portfolio", highlight: "without stress" },
-                { text: "When you don't have time for", highlight: "deep research" },
+                {
+                  text: "When a crypto pumps and you want to know",
+                  highlight: "if it's real",
+                },
+                {
+                  text: "When your favourite alt starts dropping and you wonder",
+                  highlight: "if you should sell",
+                },
+                {
+                  text: "When you want to find",
+                  highlight: "fast-moving opportunities before everyone else",
+                },
+                {
+                  text: "When you need to check",
+                  highlight: "if a project is secure or a ticking bomb",
+                },
+                {
+                  text: "When a friend talks to you about",
+                  highlight: "a project you never heard before",
+                },
+                {
+                  text: "When you want to manage your portfolio",
+                  highlight: "without stress",
+                },
+                {
+                  text: "When you don't have time for",
+                  highlight: "deep research",
+                },
               ].map((item, index) => (
                 <motion.div
                   key={index}
@@ -103,7 +130,9 @@ export function SocialProof() {
                   <div className="flex-shrink-0 w-2 h-2 rounded-full bg-purple-500 mt-2" />
                   <p className="text-gray-300 text-lg">
                     {item.text}{" "}
-                    <span className="font-semibold text-white">{item.highlight}</span>
+                    <span className="font-semibold text-white">
+                      {item.highlight}
+                    </span>
                   </p>
                 </motion.div>
               ))}
@@ -112,7 +141,10 @@ export function SocialProof() {
             <div className="mt-10 text-center">
               <p className="text-xl text-gray-300">
                 CryptoScores becomes your{" "}
-                <span className="font-bold text-purple-400">&quot;15-second analyst&quot;</span>.
+                <span className="font-bold text-purple-400">
+                  &quot;15-second analyst&quot;
+                </span>
+                .
               </p>
             </div>
           </div>
