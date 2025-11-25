@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg version="1.1" id="svg1" width="500" height="500" viewBox="0 0 500 500" sodipodi:docname="cryptoScoresVector-02.eps"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+   <defs id="defs1">
+      <linearGradient x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse"
+         gradientTransform="matrix(8149.78,2785.83,2785.83,-8149.78,86.2488,1886.75)" spreadMethod="pad"
+         id="linearGradient5">
+         <stop style="stop-opacity:1;stop-color:#53b3e8" offset="0" id="stop2" />
+         <stop style="stop-opacity:1;stop-color:#53b3e8" offset="0.00446915" id="stop3" />
+         <stop style="stop-opacity:1;stop-color:#3766b9" offset="0.505587" id="stop4" />
+         <stop style="stop-opacity:1;stop-color:#53b3e8" offset="1" id="stop5" />
+      </linearGradient>
+      <clipPath clipPathUnits="userSpaceOnUse" id="clipPath5">
+         <path
+            d="m 2804.21,3209.63 -170.69,-170.69 c 110.23,-162.08 174.68,-357.96 174.68,-568.37 0,-558.96 -454.8,-1013.75 -1013.76,-1013.75 -559.11,0 -1013.905,454.79 -1013.905,1013.75 0,559.12 454.795,1013.91 1013.905,1013.91 210.41,0 406.14,-64.45 568.37,-174.68 l 170.85,170.85 4.47,76.89 c -211.53,145.16 -467.71,230.03 -743.69,230.03 -727.41,0 -1316.995,-589.59 -1316.995,-1317 0,-727.25 589.585,-1316.84 1316.995,-1316.84 727.26,0 1316.84,589.59 1316.84,1316.84 0,275.81 -84.86,532 -230.02,743.52 z"
+            id="path5" />
+      </clipPath>
+      <linearGradient x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse"
+         gradientTransform="matrix(8149.78,2785.83,2785.83,-8149.78,86.2512,1886.74)" spreadMethod="pad"
+         id="linearGradient9">
+         <stop style="stop-opacity:1;stop-color:#53b3e8" offset="0" id="stop6" />
+         <stop style="stop-opacity:1;stop-color:#53b3e8" offset="0.00446915" id="stop7" />
+         <stop style="stop-opacity:1;stop-color:#3766b9" offset="0.505587" id="stop8" />
+         <stop style="stop-opacity:1;stop-color:#53b3e8" offset="1" id="stop9" />
+      </linearGradient>
+      <clipPath clipPathUnits="userSpaceOnUse" id="clipPath9">
+         <path
+            d="m 1794.48,2936.05 c 57.91,0 113.26,-10.68 164.47,-30.14 l 226.52,226.51 c -114.54,67.8 -248.22,106.72 -390.99,106.72 -424.48,0 -768.57,-344.08 -768.57,-768.57 0,-424.32 344.09,-768.4 768.57,-768.4 257.79,0 485.9,126.97 625.16,321.75 l -241.35,183.93 c -83.91,-122.2 -224.61,-202.59 -383.81,-202.59 -256.67,0 -465.48,208.81 -465.48,465.31 0,256.67 208.81,465.48 465.48,465.48 z"
+            id="path9" />
+      </clipPath>
+      <linearGradient x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse"
+         gradientTransform="matrix(8149.78,2785.83,2785.83,-8149.78,-69.9622,2343.74)" spreadMethod="pad"
+         id="linearGradient13">
+         <stop style="stop-opacity:1;stop-color:#53b3e8" offset="0" id="stop10" />
+         <stop style="stop-opacity:1;stop-color:#53b3e8" offset="0.00446915" id="stop11" />
+         <stop style="stop-opacity:1;stop-color:#3766b9" offset="0.505587" id="stop12" />
+         <stop style="stop-opacity:1;stop-color:#53b3e8" offset="1" id="stop13" />
+      </linearGradient>
+      <clipPath clipPathUnits="userSpaceOnUse" id="clipPath13">
+         <path
+            d="m 3061.32,4131.38 -418.42,-417.94 -12.93,-224.92 -2.87,-49.77 -187.11,-186.96 -174.04,-174.2 -217.43,-217.26 -201.22,-201.22 -1.65,0.57 c -16.38,4.38 -33.4,6.8 -51.24,6.8 -61.45,0 -116.42,-28.37 -152.25,-72.8 -8.11,-9.89 -15.24,-20.59 -21.08,-32.1 -14.43,-27.08 -22.54,-58.05 -22.54,-90.96 0,-108.15 87.72,-195.71 195.87,-195.71 32.92,0 63.72,8.11 90.96,22.38 10.87,5.67 21.08,12.32 30.65,19.94 45.23,35.83 74.1,91.29 74.1,153.39 0,17.83 -2.44,35.02 -6.81,51.4 l -0.57,1.65 779.48,779.48 50.25,2.88 224.6,13.24 417.94,418.42 -371.52,22.17 z"
+            id="path13" />
+      </clipPath>
+   </defs>
+   <sodipodi:namedview id="namedview1" pagecolor="#ffffff" bordercolor="#000000" borderopacity="0.25"
+      inkscape:showpageshadow="2" inkscape:pageopacity="0.0" inkscape:pagecheckerboard="0" inkscape:deskcolor="#d1d1d1">
+      <inkscape:page x="0" y="0" inkscape:label="1" id="page1" width="600" height="650" margin="0" bleed="0" />
+   </sodipodi:namedview>
+   <g id="g1" inkscape:groupmode="layer" inkscape:label="1">
+      <g id="group-R5">
+         <path id="path2"
+            d="m 2804.21,3209.63 -170.69,-170.69 c 110.23,-162.08 174.68,-357.96 174.68,-568.37 0,-558.96 -454.8,-1013.75 -1013.76,-1013.75 -559.11,0 -1013.905,454.79 -1013.905,1013.75 0,559.12 454.795,1013.91 1013.905,1013.91 210.41,0 406.14,-64.45 568.37,-174.68 l 170.85,170.85 4.47,76.89 c -211.53,145.16 -467.71,230.03 -743.69,230.03 -727.41,0 -1316.995,-589.59 -1316.995,-1317 0,-727.25 589.585,-1316.84 1316.995,-1316.84 727.26,0 1316.84,589.59 1316.84,1316.84 0,275.81 -84.86,532 -230.02,743.52 l -77.05,-4.46"
+            style="fill:url(#linearGradient5);fill-opacity:1;fill-rule:nonzero;stroke:none"
+            transform="matrix(0.13333333,0,0,-0.13333333,0,590)" clip-path="url(#clipPath5)" />
+         <path id="path6"
+            d="m 1794.48,2936.05 c 57.91,0 113.26,-10.68 164.47,-30.14 l 226.52,226.51 c -114.54,67.8 -248.22,106.72 -390.99,106.72 -424.48,0 -768.57,-344.08 -768.57,-768.57 0,-424.32 344.09,-768.4 768.57,-768.4 257.79,0 485.9,126.97 625.16,321.75 l -241.35,183.93 c -83.91,-122.2 -224.61,-202.59 -383.81,-202.59 -256.67,0 -465.48,208.81 -465.48,465.31 0,256.67 208.81,465.48 465.48,465.48"
+            style="fill:url(#linearGradient9);fill-opacity:1;fill-rule:nonzero;stroke:none"
+            transform="matrix(0.13333333,0,0,-0.13333333,0,590)" clip-path="url(#clipPath9)" />
+         <path id="path10"
+            d="m 3061.32,4131.38 -418.42,-417.94 -12.93,-224.92 -2.87,-49.77 -187.11,-186.96 -174.04,-174.2 -217.43,-217.26 -201.22,-201.22 -1.65,0.57 c -16.38,4.38 -33.4,6.8 -51.24,6.8 -61.45,0 -116.42,-28.37 -152.25,-72.8 -8.11,-9.89 -15.24,-20.59 -21.08,-32.1 -14.43,-27.08 -22.54,-58.05 -22.54,-90.96 0,-108.15 87.72,-195.71 195.87,-195.71 32.92,0 63.72,8.11 90.96,22.38 10.87,5.67 21.08,12.32 30.65,19.94 45.23,35.83 74.1,91.29 74.1,153.39 0,17.83 -2.44,35.02 -6.81,51.4 l -0.57,1.65 779.48,779.48 50.25,2.88 224.6,13.24 417.94,418.42 -371.52,22.17 -22.17,371.52"
+            style="fill:url(#linearGradient13);fill-opacity:1;fill-rule:nonzero;stroke:none"
+            transform="matrix(0.13333333,0,0,-0.13333333,0,590)" clip-path="url(#clipPath13)" />
+      </g>
+   </g>
+</svg>

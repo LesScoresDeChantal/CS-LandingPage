@@ -85,8 +85,11 @@ export function Header() {
             >
               Sign in
             </Button> */}
-            <Button className="bg-gradient-to-r from-[#0666c6] to-[#05b5fb] hover:from-[#0555a5] hover:to-[#0499da] text-white font-semibold px-6 py-2.5 rounded-lg shadow-lg shadow-[#0666c6]/25 hover:shadow-[#0666c6]/40 transition-all hover:scale-105">
-              Try it for free
+            <Button
+              asChild
+              className="bg-gradient-to-r from-[#0666c6] to-[#05b5fb] hover:from-[#0555a5] hover:to-[#0499da] text-white font-semibold px-6 py-2.5 rounded-lg shadow-lg shadow-[#0666c6]/25 hover:shadow-[#0666c6]/40 transition-all hover:scale-105"
+            >
+              <a href="#pricing">Try it for free</a>
             </Button>
           </div>
         </div>

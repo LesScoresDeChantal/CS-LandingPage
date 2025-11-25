@@ -1,8 +1,15 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 import { Check } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
+
+interface PricePlan {
+  price: number;
+  totalYearly: number;
+  comparisonPrice?: number;
+}
 
 interface Plan {
   name: string;
@@ -11,10 +18,27 @@ interface Plan {
   features: string[];
   cta: string;
   highlighted: boolean;
+  url: string;
   badge?: string;
-  monthlyPrice: number;
-  yearlyPrice: number;
+  monthly: PricePlan;
+  yearly: PricePlan;
 }
+
+const YEARLY_DISCOUNT: number = 0.3;
+
+const ESSENTIAL_MONTHLY_PRICE: number = 29;
+const ESSENTIAL_MONTHLY_YEARLY_PRICE: number = Math.floor(
+  ESSENTIAL_MONTHLY_PRICE * (1 - YEARLY_DISCOUNT)
+);
+
+const PRO_MONTHLY_PRICE: number = 99;
+const PRO_MONTHLY_YEARLY_PRICE: number = Math.floor(
+  PRO_MONTHLY_PRICE * (1 - YEARLY_DISCOUNT)
+);
+const ULTIMATE_MONTHLY_PRICE: number = 299;
+const ULTIMATE_MONTHLY_YEARLY_PRICE: number = Math.floor(
+  ULTIMATE_MONTHLY_PRICE * (1 - YEARLY_DISCOUNT)
+);
 
 const plans: Plan[] = [
   {
@@ -28,8 +52,16 @@ const plans: Plan[] = [
     ],
     cta: "Start Free (14 days)",
     highlighted: false,
-    monthlyPrice: 29,
-    yearlyPrice: 29,
+    url: "https://buy.stripe.com/6oU28q787eZu4Hi0wBes000",
+    monthly: {
+      price: ESSENTIAL_MONTHLY_PRICE,
+      totalYearly: ESSENTIAL_MONTHLY_PRICE * 12,
+    },
+    yearly: {
+      price: ESSENTIAL_MONTHLY_YEARLY_PRICE,
+      totalYearly: ESSENTIAL_MONTHLY_YEARLY_PRICE * 12,
+      comparisonPrice: ESSENTIAL_MONTHLY_PRICE * 12,
+    },
   },
   {
     name: "PRO",
@@ -43,8 +75,16 @@ const plans: Plan[] = [
     ],
     cta: "Start Free (14 days)",
     highlighted: true,
-    monthlyPrice: 99,
-    yearlyPrice: 99,
+    url: "https://buy.stripe.com/aFafZg6437x2b5G3INes001",
+    monthly: {
+      price: PRO_MONTHLY_PRICE,
+      totalYearly: PRO_MONTHLY_PRICE * 12,
+    },
+    yearly: {
+      price: PRO_MONTHLY_YEARLY_PRICE,
+      totalYearly: PRO_MONTHLY_YEARLY_PRICE * 12,
+      comparisonPrice: PRO_MONTHLY_PRICE * 12,
+    },
   },
   {
     name: "Ultimate",
@@ -57,10 +97,56 @@ const plans: Plan[] = [
     ],
     cta: "Start now",
     highlighted: false,
-    monthlyPrice: 299,
-    yearlyPrice: 299,
+    url: "https://buy.stripe.com/3cI00igIH3gM4Hi937es002",
+    monthly: {
+      price: ULTIMATE_MONTHLY_PRICE,
+      totalYearly: ULTIMATE_MONTHLY_PRICE * 12,
+    },
+    yearly: {
+      price: ULTIMATE_MONTHLY_YEARLY_PRICE,
+      totalYearly: ULTIMATE_MONTHLY_YEARLY_PRICE * 12,
+      comparisonPrice: ULTIMATE_MONTHLY_PRICE * 12,
+    },
   },
 ];
+
+interface AnimatedPriceProps {
+  value: number;
+}
+
+function AnimatedPrice({ value }: AnimatedPriceProps) {
+  const [displayValue, setDisplayValue] = useState(value);
+  const prevValueRef = useRef(value);
+
+  useEffect(() => {
+    const prevValue = prevValueRef.current;
+    const diff = value - prevValue;
+
+    if (diff === 0) return;
+
+    const duration = 500; // ms
+    const steps = 20;
+    const stepValue = diff / steps;
+    const stepDuration = duration / steps;
+    let currentStep = 0;
+
+    const interval = setInterval(() => {
+      currentStep++;
+      if (currentStep <= steps) {
+        setDisplayValue(Math.round(prevValue + stepValue * currentStep));
+      } else {
+        setDisplayValue(value);
+        clearInterval(interval);
+      }
+    }, stepDuration);
+
+    prevValueRef.current = value;
+
+    return () => clearInterval(interval);
+  }, [value]);
+
+  return <>${displayValue}</>;
+}
 
 export function PricingSection() {
   const [isYearly, setIsYearly] = useState(false);
@@ -69,46 +155,17 @@ export function PricingSection() {
     <section id="pricing" className="py-24 bg-black">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="max-w-3xl mx-auto text-center mb-12">
+        <div className="max-w-3xl mx-auto text-center mb-12 flex flex-col gap-8">
           <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">
-            Plans and Pricing
+            Pricing Plans
           </h2>
-          <p className="text-lg text-gray-400">
-            Receive unlimited credits when you pay yearly, and save on your
-            plan.
+          <p className="text-xl font-semibold bg-linear-to-r from-[#0666c6] to-[#05b5fb] bg-clip-text text-transparent">
+            Institutional-grade data, at a retail price
           </p>
         </div>
 
         {/* Toggle */}
-        <div className="flex items-center justify-center gap-3 mb-16">
-          <div className="inline-flex items-center gap-1 bg-[#1e1e32] rounded-full p-1.5 border border-gray-800/50">
-            <button
-              onClick={() => setIsYearly(false)}
-              className={`px-7 py-2.5 rounded-full font-medium transition-all duration-300 ${
-                !isYearly
-                  ? "bg-white text-black shadow-lg"
-                  : "text-gray-400 hover:text-gray-300"
-              }`}
-            >
-              Monthly
-            </button>
-            <button
-              onClick={() => setIsYearly(true)}
-              className={`px-7 py-2.5 rounded-full font-medium transition-all duration-300 ${
-                isYearly
-                  ? "bg-white text-black shadow-lg"
-                  : "text-gray-400 hover:text-gray-300"
-              }`}
-            >
-              Yearly
-            </button>
-          </div>
-          {!isYearly && (
-            <span className="inline-flex items-center px-3 py-1.5 rounded-full bg-gray-800 text-gray-300 text-xs font-semibold border border-gray-700">
-              Save 35%
-            </span>
-          )}
-        </div>
+        <PricingToggle isYearly={isYearly} setIsYearly={setIsYearly} />
 
         {/* Pricing Cards */}
         <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
@@ -136,12 +193,31 @@ export function PricingSection() {
 
               {/* Price */}
               <div className="relative mb-8">
-                <div className="flex items-baseline gap-1 mb-2">
-                  <span className="text-5xl font-bold text-white transition-all duration-500 ease-out">
-                    ${isYearly ? plan.yearlyPrice : plan.monthlyPrice}
+                <div className="flex items-baseline gap-2 mb-2">
+                  <span className="text-5xl font-bold text-white">
+                    <AnimatedPrice
+                      value={isYearly ? plan.yearly.price : plan.monthly.price}
+                    />
+                  </span>
+                  <span className="text-lg text-gray-500">per month</span>
+                </div>
+                <div className="text-sm text-gray-400 mb-4 overflow-hidden">
+                  <span
+                    key={isYearly ? "yearly" : "monthly"}
+                    className="inline-block animate-in fade-in slide-in-from-bottom-2 duration-300"
+                  >
+                    {isYearly ? (
+                      <>
+                        <span className="line-through text-gray-600">
+                          ${plan.yearly.comparisonPrice}
+                        </span>{" "}
+                        ${plan.yearly.totalYearly} billed annually
+                      </>
+                    ) : (
+                      `$${plan.monthly.totalYearly} total annually`
+                    )}
                   </span>
                 </div>
-                <p className="text-sm text-gray-500 mb-4">Per month</p>
                 <p className="text-gray-400 text-sm">{plan.description}</p>
               </div>
 
@@ -160,8 +236,13 @@ export function PricingSection() {
               </div>
 
               {/* CTA */}
-              <Button className="relative w-full rounded-xl font-semibold transition-all bg-white hover:bg-gray-100 text-black py-6">
-                {plan.cta}
+              <Button
+                asChild
+                className="relative w-full rounded-xl font-semibold transition-all bg-white hover:bg-gray-100 text-black py-6"
+              >
+                <a href={plan.url} target="_blank">
+                  {plan.cta}
+                </a>
               </Button>
             </div>
           ))}
@@ -181,5 +262,46 @@ export function PricingSection() {
         </div>
       </div>
     </section>
+  );
+}
+
+interface PricingToggleProps {
+  isYearly: boolean;
+  setIsYearly: (value: boolean) => void;
+}
+
+function PricingToggle({ isYearly, setIsYearly }: PricingToggleProps) {
+  return (
+    <div className="flex items-center justify-center mb-4">
+      <div className="text-sm relative inline-flex items-center gap-1 bg-[#1e1e32] rounded-full p-1 border border-gray-800/50">
+        <div
+          className={cn(
+            "absolute top-1/2 -translate-y-1/2 h-[calc(75%)] bg-[#0666c6] rounded-full shadow-lg transition-all duration-500 ease-out",
+            isYearly ? "left-[38%] w-[58%]" : "left-[3%] w-[30%]"
+          )}
+        />
+
+        {/* Buttons */}
+        <button
+          onClick={() => setIsYearly(false)}
+          className={`relative z-10 px-4 py-1 rounded-full font-medium transition-colors duration-300 ${
+            !isYearly ? "text-white" : "text-gray-400 hover:text-gray-300"
+          }`}
+        >
+          Monthly
+        </button>
+        <button
+          onClick={() => setIsYearly(true)}
+          className={`relative z-10 px-4 py-1 rounded-full font-medium transition-colors duration-300 flex items-center gap-2 ${
+            isYearly ? "text-white" : "text-gray-400 hover:text-gray-300"
+          }`}
+        >
+          <span>Yearly</span>
+          <span className="inline-flex items-center px-2.5 py-0.5 rounded-full bg-black text-white text-xs font-semibold">
+            Save 30%
+          </span>
+        </button>
+      </div>
+    </div>
   );
 }

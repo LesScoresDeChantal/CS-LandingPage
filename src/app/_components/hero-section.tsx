@@ -43,11 +43,14 @@ export function HeroSection() {
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
             <Button
+              asChild
               size="lg"
               className="bg-gradient-to-r from-[#0666c6] to-[#05b5fb] hover:from-[#0555a5] hover:to-[#0499da] text-white px-10 py-7 text-lg rounded-lg shadow-lg shadow-[#0666c6]/20 transition-all"
             >
-              Start Free — Get Your First Scores Now
-              <ArrowRight className="ml-2 w-5 h-5" />
+              <a href="#pricing">
+                Start Free - Get Your First Scores Now
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </a>
             </Button>
           </div>
 

@@ -139,8 +139,11 @@ export function AnalysisCategoriesSection() {
 
         {/* CTA */}
         <div className="mt-12 text-center">
-          <Button className="px-8 py-6 text-lg font-semibold bg-linear-to-r from-[#0666c6] to-[#05b5fb] hover:opacity-90 transition-opacity">
-            Start for free
+          <Button
+            asChild
+            className="px-8 py-6 text-lg font-semibold bg-linear-to-r from-[#0666c6] to-[#05b5fb] hover:opacity-90 transition-opacity"
+          >
+            <a href="#pricing">Start for free</a>
           </Button>
         </div>
       </div>

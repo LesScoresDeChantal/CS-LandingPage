@@ -20,13 +20,13 @@ export function EducationSection() {
 
           <div className="bg-gray-900/30 border border-gray-800 rounded-2xl p-8 md:p-12">
             <h3 className="text-2xl font-bold text-white mb-4">
-              Learn the logic behind great investing
+              Learn while using CryptoScores
             </h3>
 
             <p className="text-gray-300 mb-6">
-              CryptoScores doesn&apos;t just give you a final score — it shows
-              you the key metrics serious investors look at, and why they
-              matter.
+              By using CryptoScores you will be investing your money in a
+              smarter way. But we wanted you to be investing in yourself as
+              well. Because we know how much knowledge is a strength.
             </p>
 
             <p className="text-gray-400 mb-6">
@@ -46,8 +46,8 @@ export function EducationSection() {
 
             <div className="bg-black/40 border border-gray-800 rounded-xl p-6 mb-8">
               <p className="text-gray-300">
-                You don&apos;t just see numbers — you learn how to understand
-                them to become better as an investor.
+                You don&apos;t just see numbers you learn how to understand them
+                to become better as an investor.
               </p>
             </div>
 

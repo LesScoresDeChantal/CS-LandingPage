@@ -15,11 +15,14 @@ export function CTASection() {
           </p>
 
           <Button
+            asChild
             size="lg"
             className="bg-gradient-to-r from-[#0666c6] to-[#05b5fb] hover:from-[#0555a5] hover:to-[#0499da] text-white px-10 py-8 text-xl rounded-lg shadow-2xl shadow-[#0666c6]/30"
           >
-            Start Free Now (14 Days)
-            <ArrowRight className="ml-2 w-6 h-6" />
+            <a href="#pricing">
+              Start Free Now (14 Days)
+              <ArrowRight className="ml-2 w-6 h-6" />
+            </a>
           </Button>
 
           <div className="mt-8 flex flex-wrap justify-center gap-6 text-sm text-gray-500">
