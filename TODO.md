@@ -1,7 +1,0 @@
-- [ ] Pour étape "open telegram" mettre screenshot du QR Code du bot
-- [ ] Mettre les screenshots de gaétant pour étape 2 et 3
-- [ ] Virer les icones et remplacer par le numéro de l'étape
-- [ ] Virer toutes les icones dégueu de chatgpt
-- [ ] Reprendre cette section pricing: https://shadcn-pricing-page.vercel.app/
-- [ ] Partir sur une base qui ressemble beaucoup plus a la LP de la webapp: https://www.lsdc.dev/
-- [ ] Utiliser logo

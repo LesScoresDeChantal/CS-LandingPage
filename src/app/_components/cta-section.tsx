@@ -29,7 +29,7 @@ export function CTASection() {
             </div>
             <div className="flex items-center gap-2">
               <Check className="w-4 h-4 text-[#05b5fb]" />
-              <span>No credit card required</span>
+              <span>Mobile & Desktop friendly</span>
             </div>
             <div className="flex items-center gap-2">
               <Check className="w-4 h-4 text-[#05b5fb]" />

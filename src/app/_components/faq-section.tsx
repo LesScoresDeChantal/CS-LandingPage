@@ -9,7 +9,7 @@ const faqs = [
   {
     question: "How does the 14-day free trial work?",
     answer:
-      "Start using CryptoScores immediately with full access to all features. No credit card required. After 14 days, choose a plan or cancel anytime.",
+      "Start using CryptoScores immediately with the chosen plan. You can cancel anytime.",
   },
   {
     question: "Where does your data come from?",
@@ -51,7 +51,9 @@ export function FAQSection() {
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
             Frequently Asked Questions
           </h2>
-          <p className="text-lg text-gray-400">Got questions? We have answers.</p>
+          <p className="text-lg text-gray-400">
+            Got questions? We have answers.
+          </p>
         </div>
 
         <div className="max-w-3xl mx-auto">
@@ -75,7 +77,10 @@ export function FAQSection() {
           <div className="mt-12 text-center">
             <p className="text-gray-400">
               Can&apos;t find the answer to your question?{" "}
-              <a href="mailto:contact@cryptoscores.com" className="text-[#05b5fb] hover:underline">
+              <a
+                href="mailto:contact@cryptoscores.com"
+                className="text-[#05b5fb] hover:underline"
+              >
                 Contact us
               </a>
             </p>

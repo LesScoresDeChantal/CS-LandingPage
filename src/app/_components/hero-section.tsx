@@ -12,7 +12,7 @@ export function HeroSection() {
           {/* Badge */}
           <div className="inline-flex items-center px-4 py-2 mb-8 rounded-full bg-[#0666c6]/10 border border-[#0666c6]/20">
             <span className="text-sm text-[#05b5fb] font-medium">
-              7,600+ cryptocurrencies analyzed daily
+              7,000+ cryptocurrencies analyzed daily
             </span>
           </div>
 
@@ -46,7 +46,7 @@ export function HeroSection() {
               size="lg"
               className="bg-gradient-to-r from-[#0666c6] to-[#05b5fb] hover:from-[#0555a5] hover:to-[#0499da] text-white px-10 py-7 text-lg rounded-lg shadow-lg shadow-[#0666c6]/20 transition-all"
             >
-              Start Free — Get Your First Scores in 10 Seconds
+              Start Free — Get Your First Scores Now
               <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
           </div>
@@ -59,7 +59,7 @@ export function HeroSection() {
             </div>
             <div className="flex items-center gap-2">
               <Check className="w-4 h-4 text-[#05b5fb]" />
-              <span>No credit card required</span>
+              <span>Mobile & Desktop friendly</span>
             </div>
             <div className="flex items-center gap-2">
               <Check className="w-4 h-4 text-[#05b5fb]" />
@@ -71,11 +71,11 @@ export function HeroSection() {
           <div className="mt-20 grid grid-cols-3 gap-8 max-w-3xl mx-auto">
             {[
               { value: "7,000+", label: "Cryptos analyzed" },
+              { value: "100+", label: "Metrics Analyzed & Scored" },
               { value: "24/7", label: "Real-time updates" },
-              { value: "99%", label: "Data accuracy" },
             ].map((stat, index) => (
               <div key={index} className="text-center">
-                <div className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-[#0666c6] to-[#05b5fb] bg-clip-text text-transparent mb-2">
+                <div className="text-3xl sm:text-4xl font-bold bg-linear-to-r from-[#0666c6] to-[#05b5fb] bg-clip-text text-transparent mb-2">
                   {stat.value}
                 </div>
                 <div className="text-sm text-gray-500">{stat.label}</div>

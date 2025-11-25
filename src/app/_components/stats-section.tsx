@@ -26,7 +26,8 @@ export function StatsSection() {
             Numbers that speak
           </h2>
           <p className="text-lg text-gray-400">
-            Join thousands of investors who use CryptoScores to make better decisions.
+            Join thousands of investors who use CryptoScores to make better
+            decisions.
           </p>
         </div>
 

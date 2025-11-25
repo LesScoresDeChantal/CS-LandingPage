@@ -8,6 +8,7 @@ import {
   Coins,
   Newspaper,
 } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const categories = [
   {
@@ -62,7 +63,7 @@ const categories = [
 
 export function AnalysisCategoriesSection() {
   return (
-    <section className="py-24 bg-gray-950">
+    <section id="categories" className="py-24 bg-gray-950">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
@@ -75,8 +76,12 @@ export function AnalysisCategoriesSection() {
           {/* Header */}
           <div className="grid grid-cols-3 gap-4 p-6 bg-gradient-to-r from-[#0666c6]/10 to-[#05b5fb]/10 border-b border-gray-800">
             <div className="text-[#05b5fb] font-semibold text-lg">Category</div>
-            <div className="text-[#05b5fb] font-semibold text-lg">What You See</div>
-            <div className="text-[#05b5fb] font-semibold text-lg">Why It Matters</div>
+            <div className="text-[#05b5fb] font-semibold text-lg">
+              What You See
+            </div>
+            <div className="text-[#05b5fb] font-semibold text-lg">
+              Why It Matters
+            </div>
           </div>
 
           {/* Rows */}
@@ -89,7 +94,9 @@ export function AnalysisCategoriesSection() {
                 <div className="p-2 rounded-lg bg-gradient-to-r from-[#0666c6] to-[#05b5fb]">
                   <item.icon className="w-5 h-5 text-white" />
                 </div>
-                <span className="font-semibold text-white">{item.category}</span>
+                <span className="font-semibold text-white">
+                  {item.category}
+                </span>
               </div>
               <div className="text-gray-400">{item.whatYouSee}</div>
               <div className="text-gray-300">{item.whyItMatters}</div>
@@ -108,20 +115,33 @@ export function AnalysisCategoriesSection() {
                 <div className="p-3 rounded-xl bg-gradient-to-r from-[#0666c6] to-[#05b5fb]">
                   <item.icon className="w-6 h-6 text-white" />
                 </div>
-                <h3 className="font-bold text-xl text-white">{item.category}</h3>
+                <h3 className="font-bold text-xl text-white">
+                  {item.category}
+                </h3>
               </div>
               <div className="space-y-3">
                 <div>
-                  <div className="text-sm text-[#05b5fb] font-semibold mb-1">What You See</div>
+                  <div className="text-sm text-[#05b5fb] font-semibold mb-1">
+                    What You See
+                  </div>
                   <div className="text-gray-400">{item.whatYouSee}</div>
                 </div>
                 <div>
-                  <div className="text-sm text-[#05b5fb] font-semibold mb-1">Why It Matters</div>
+                  <div className="text-sm text-[#05b5fb] font-semibold mb-1">
+                    Why It Matters
+                  </div>
                   <div className="text-gray-300">{item.whyItMatters}</div>
                 </div>
               </div>
             </div>
           ))}
+        </div>
+
+        {/* CTA */}
+        <div className="mt-12 text-center">
+          <Button className="px-8 py-6 text-lg font-semibold bg-linear-to-r from-[#0666c6] to-[#05b5fb] hover:opacity-90 transition-opacity">
+            Start for free
+          </Button>
         </div>
       </div>
     </section>

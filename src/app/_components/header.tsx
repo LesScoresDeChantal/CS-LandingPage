@@ -48,17 +48,17 @@ export function Header() {
           {/* Navigation - Centered */}
           <nav className="hidden lg:flex items-center gap-10 absolute left-1/2 -translate-x-1/2">
             <a
-              href="#features"
-              className="text-sm font-medium text-gray-300 hover:text-white transition-colors relative group"
-            >
-              Features
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-[#0666c6] to-[#05b5fb] transition-all group-hover:w-full" />
-            </a>
-            <a
               href="#how-it-works"
               className="text-sm font-medium text-gray-300 hover:text-white transition-colors relative group"
             >
               How it works
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-[#0666c6] to-[#05b5fb] transition-all group-hover:w-full" />
+            </a>
+            <a
+              href="#categories"
+              className="text-sm font-medium text-gray-300 hover:text-white transition-colors relative group"
+            >
+              Features
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-[#0666c6] to-[#05b5fb] transition-all group-hover:w-full" />
             </a>
             <a

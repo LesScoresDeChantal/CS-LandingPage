@@ -29,7 +29,9 @@ export function FinalCTA() {
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-500/10 border border-purple-500/20 mb-8"
           >
             <Sparkles className="w-4 h-4 text-purple-400" />
-            <span className="text-sm text-purple-300">Join thousands of smart investors</span>
+            <span className="text-sm text-purple-300">
+              Join thousands of smart investors
+            </span>
           </motion.div>
 
           <motion.h2
@@ -81,7 +83,7 @@ export function FinalCTA() {
             </div>
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 rounded-full bg-green-500" />
-              <span>No credit card required</span>
+              <span>Mobile & Desktop friendly</span>
             </div>
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 rounded-full bg-green-500" />
