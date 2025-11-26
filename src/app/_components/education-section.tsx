@@ -30,7 +30,16 @@ export function EducationSection() {
             </p>
 
             <p className="text-gray-400 mb-6">
-              That&apos;s why we created a free GitBook that explains:
+              That&apos;s why we created a free{" "}
+              <a
+                href="https://cryptoscores.gitbook.io/docs"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#05b5fb] hover:text-[#0666c6] underline transition-colors"
+              >
+                GitBook
+              </a>{" "}
+              that explains:
             </p>
 
             <div className="space-y-4 mb-8">
@@ -51,15 +60,20 @@ export function EducationSection() {
               </p>
             </div>
 
-            <div className="flex items-center gap-3 bg-[#0666c6]/10 border border-[#0666c6]/30 rounded-xl p-6">
-              <BookOpen className="w-6 h-6 text-[#05b5fb] shrink-0" />
+            <a
+              href="https://cryptoscores.gitbook.io/docs"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-3 bg-[#0666c6]/10 border border-[#0666c6]/30 rounded-xl p-6 hover:bg-[#0666c6]/20 hover:border-[#0666c6]/50 transition-all cursor-pointer group"
+            >
+              <BookOpen className="w-6 h-6 text-[#05b5fb] shrink-0 group-hover:scale-110 transition-transform" />
               <p className="text-gray-200">
-                <span className="font-semibold text-white">
+                <span className="font-semibold text-white group-hover:text-[#05b5fb] transition-colors">
                   Access the gitbook in one click
                 </span>{" "}
                 from any CryptoScores analysis
               </p>
-            </div>
+            </a>
           </div>
         </div>
       </div>

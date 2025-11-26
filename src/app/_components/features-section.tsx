@@ -26,21 +26,23 @@ export function FeaturesSection() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
-            Why CryptoScores changes everything
+            Why Investors Use CryptoScores
           </h2>
           <p className="text-xl text-gray-400 mb-4">
-            You don&apos;t need spreadsheets, on-chain explorers, GitHub, 12 dashboards and 25 open tabs.
+            Investors are done juggling 25 tabs and scattered tools.
           </p>
-          <p className="text-2xl text-white font-semibold">
-            You need one thing:{" "}
+          <p className="text-2xl text-white font-semibold flex flex-col gap-2">
+            <span>They want one place that gathers all the data they need</span>
             <span className="text-[#05b5fb]">
-              Clear, instant answers about any crypto.
+              …and actually scores it for them.
             </span>
           </p>
         </div>
 
         <div className="max-w-3xl mx-auto mb-12">
-          <p className="text-lg text-gray-300 mb-8">With CryptoScores, you can:</p>
+          <p className="text-lg text-gray-300 mb-8">
+            With CryptoScores, they can:
+          </p>
           <div className="grid md:grid-cols-2 gap-6">
             {features.map((feature, index) => (
               <Card

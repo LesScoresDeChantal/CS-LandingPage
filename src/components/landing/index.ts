@@ -1,9 +1,0 @@
-export { Hero } from "./Hero";
-export { WhySection } from "./WhySection";
-export { HowItWorks } from "./HowItWorks";
-export { AnalysisTable } from "./AnalysisTable";
-export { SocialProof } from "./SocialProof";
-export { EducationSection } from "./EducationSection";
-export { Pricing } from "./Pricing";
-export { FinalCTA } from "./FinalCTA";
-export { Footer } from "./Footer";

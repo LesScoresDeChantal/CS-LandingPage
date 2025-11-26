@@ -1,11 +1,20 @@
 import Image from "next/image";
 
-const steps = [
+interface Step {
+  number: string;
+  title: string;
+  description: string;
+  image: string;
+  imageUrl?: string;
+}
+
+const steps: Step[] = [
   {
     number: "1",
     title: "Open Telegram",
     description: "Start a chat with your CryptoScores bot.",
     image: "/images/how-it-works/hiw-1.png",
+    imageUrl: "https://t.me/CryptoScoresBot?start",
   },
   {
     number: "2",
@@ -13,6 +22,7 @@ const steps = [
     description:
       "You can ask for a crypto with the search mode of your choice: Name, Symbol, or Coingecko ID.",
     image: "/images/how-it-works/hiw-2.webp",
+    imageUrl: "https://t.me/CryptoScoresBot?start",
   },
   {
     number: "3",
@@ -20,6 +30,7 @@ const steps = [
     description:
       "Receive a complete dashboard with scores for community, liquidity, momentum, technology, security, tokenomics, and alerts.",
     image: "/images/how-it-works/hiw-3.webp",
+    imageUrl: "https://t.me/CryptoScoresBot?start",
   },
 ];
 
@@ -45,17 +56,19 @@ export function HowItWorksSection() {
               <div className="flex-1">
                 <div>
                   <div className="relative rounded-2xl overflow-hidden border border-gray-800 bg-gray-900/50 shadow-2xl shadow-[#0666c6]/10">
-                    <Image
-                      src={step.image}
-                      alt={step.title}
-                      width={600}
-                      height={400}
-                      className={`w-full h-auto ${
-                        index === 0
-                          ? "object-contain max-h-[400px]"
-                          : "object-cover"
-                      }`}
-                    />
+                    <a href={step.imageUrl} target="_blank">
+                      <Image
+                        src={step.image}
+                        alt={step.title}
+                        width={600}
+                        height={400}
+                        className={`w-full h-auto ${
+                          index === 0
+                            ? "object-contain max-h-[400px]"
+                            : "object-cover"
+                        }`}
+                      />
+                    </a>
                   </div>
                 </div>
               </div>

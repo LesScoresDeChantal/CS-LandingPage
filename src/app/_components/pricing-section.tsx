@@ -8,6 +8,7 @@ import { useState, useEffect, useRef } from "react";
 interface PricePlan {
   price: number;
   totalYearly: number;
+  url: string;
   comparisonPrice?: number;
 }
 
@@ -18,7 +19,6 @@ interface Plan {
   features: string[];
   cta: string;
   highlighted: boolean;
-  url: string;
   badge?: string;
   monthly: PricePlan;
   yearly: PricePlan;
@@ -27,18 +27,15 @@ interface Plan {
 const YEARLY_DISCOUNT: number = 0.3;
 
 const ESSENTIAL_MONTHLY_PRICE: number = 29;
-const ESSENTIAL_MONTHLY_YEARLY_PRICE: number = Math.floor(
-  ESSENTIAL_MONTHLY_PRICE * (1 - YEARLY_DISCOUNT)
-);
+const ESSENTIAL_MONTHLY_YEARLY_PRICE: number =
+  ESSENTIAL_MONTHLY_PRICE * (1 - YEARLY_DISCOUNT);
 
 const PRO_MONTHLY_PRICE: number = 99;
-const PRO_MONTHLY_YEARLY_PRICE: number = Math.floor(
-  PRO_MONTHLY_PRICE * (1 - YEARLY_DISCOUNT)
-);
+const PRO_MONTHLY_YEARLY_PRICE: number =
+  PRO_MONTHLY_PRICE * (1 - YEARLY_DISCOUNT);
 const ULTIMATE_MONTHLY_PRICE: number = 299;
-const ULTIMATE_MONTHLY_YEARLY_PRICE: number = Math.floor(
-  ULTIMATE_MONTHLY_PRICE * (1 - YEARLY_DISCOUNT)
-);
+const ULTIMATE_MONTHLY_YEARLY_PRICE: number =
+  ULTIMATE_MONTHLY_PRICE * (1 - YEARLY_DISCOUNT);
 
 const plans: Plan[] = [
   {
@@ -52,14 +49,15 @@ const plans: Plan[] = [
     ],
     cta: "Start Free (14 days)",
     highlighted: false,
-    url: "https://buy.stripe.com/6oU28q787eZu4Hi0wBes000",
     monthly: {
       price: ESSENTIAL_MONTHLY_PRICE,
       totalYearly: ESSENTIAL_MONTHLY_PRICE * 12,
+      url: "https://buy.stripe.com/6oU28q787eZu4Hi0wBes000",
     },
     yearly: {
-      price: ESSENTIAL_MONTHLY_YEARLY_PRICE,
-      totalYearly: ESSENTIAL_MONTHLY_YEARLY_PRICE * 12,
+      price: Math.floor(ESSENTIAL_MONTHLY_YEARLY_PRICE),
+      totalYearly: Math.round(ESSENTIAL_MONTHLY_YEARLY_PRICE * 12 * 100) / 100,
+      url: "https://buy.stripe.com/5kQdR8dwv18E0r2djnes005",
       comparisonPrice: ESSENTIAL_MONTHLY_PRICE * 12,
     },
   },
@@ -75,14 +73,15 @@ const plans: Plan[] = [
     ],
     cta: "Start Free (14 days)",
     highlighted: true,
-    url: "https://buy.stripe.com/aFafZg6437x2b5G3INes001",
     monthly: {
       price: PRO_MONTHLY_PRICE,
       totalYearly: PRO_MONTHLY_PRICE * 12,
+      url: "https://buy.stripe.com/aFafZg6437x2b5G3INes001",
     },
     yearly: {
-      price: PRO_MONTHLY_YEARLY_PRICE,
-      totalYearly: PRO_MONTHLY_YEARLY_PRICE * 12,
+      price: Math.floor(PRO_MONTHLY_YEARLY_PRICE),
+      totalYearly: Math.round(PRO_MONTHLY_YEARLY_PRICE * 12 * 100) / 100,
+      url: "https://buy.stripe.com/8x2dR82RR6sY2za2EJes004",
       comparisonPrice: PRO_MONTHLY_PRICE * 12,
     },
   },
@@ -97,59 +96,22 @@ const plans: Plan[] = [
     ],
     cta: "Start now",
     highlighted: false,
-    url: "https://buy.stripe.com/3cI00igIH3gM4Hi937es002",
     monthly: {
       price: ULTIMATE_MONTHLY_PRICE,
       totalYearly: ULTIMATE_MONTHLY_PRICE * 12,
+      url: "https://buy.stripe.com/3cI00igIH3gM4Hi937es002",
     },
     yearly: {
-      price: ULTIMATE_MONTHLY_YEARLY_PRICE,
-      totalYearly: ULTIMATE_MONTHLY_YEARLY_PRICE * 12,
+      price: Math.floor(ULTIMATE_MONTHLY_YEARLY_PRICE),
+      totalYearly: Math.round(ULTIMATE_MONTHLY_YEARLY_PRICE * 12 * 100) / 100,
+      url: "https://buy.stripe.com/aFacN4bon9Fa7Tuenres006",
       comparisonPrice: ULTIMATE_MONTHLY_PRICE * 12,
     },
   },
 ];
 
-interface AnimatedPriceProps {
-  value: number;
-}
-
-function AnimatedPrice({ value }: AnimatedPriceProps) {
-  const [displayValue, setDisplayValue] = useState(value);
-  const prevValueRef = useRef(value);
-
-  useEffect(() => {
-    const prevValue = prevValueRef.current;
-    const diff = value - prevValue;
-
-    if (diff === 0) return;
-
-    const duration = 500; // ms
-    const steps = 20;
-    const stepValue = diff / steps;
-    const stepDuration = duration / steps;
-    let currentStep = 0;
-
-    const interval = setInterval(() => {
-      currentStep++;
-      if (currentStep <= steps) {
-        setDisplayValue(Math.round(prevValue + stepValue * currentStep));
-      } else {
-        setDisplayValue(value);
-        clearInterval(interval);
-      }
-    }, stepDuration);
-
-    prevValueRef.current = value;
-
-    return () => clearInterval(interval);
-  }, [value]);
-
-  return <>${displayValue}</>;
-}
-
 export function PricingSection() {
-  const [isYearly, setIsYearly] = useState(false);
+  const [isYearly, setIsYearly] = useState(true);
 
   return (
     <section id="pricing" className="py-24 bg-black">
@@ -240,7 +202,10 @@ export function PricingSection() {
                 asChild
                 className="relative w-full rounded-xl font-semibold transition-all bg-white hover:bg-gray-100 text-black py-6"
               >
-                <a href={plan.url} target="_blank">
+                <a
+                  href={isYearly ? plan.yearly.url : plan.monthly.url}
+                  target="_blank"
+                >
                   {plan.cta}
                 </a>
               </Button>
@@ -304,4 +269,42 @@ function PricingToggle({ isYearly, setIsYearly }: PricingToggleProps) {
       </div>
     </div>
   );
+}
+
+interface AnimatedPriceProps {
+  value: number;
+}
+
+function AnimatedPrice({ value }: AnimatedPriceProps) {
+  const [displayValue, setDisplayValue] = useState(value);
+  const prevValueRef = useRef(value);
+
+  useEffect(() => {
+    const prevValue = prevValueRef.current;
+    const diff = value - prevValue;
+
+    if (diff === 0) return;
+
+    const duration = 500; // ms
+    const steps = 20;
+    const stepValue = diff / steps;
+    const stepDuration = duration / steps;
+    let currentStep = 0;
+
+    const interval = setInterval(() => {
+      currentStep++;
+      if (currentStep <= steps) {
+        setDisplayValue(Math.round(prevValue + stepValue * currentStep));
+      } else {
+        setDisplayValue(value);
+        clearInterval(interval);
+      }
+    }, stepDuration);
+
+    prevValueRef.current = value;
+
+    return () => clearInterval(interval);
+  }, [value]);
+
+  return <>${displayValue}</>;
 }

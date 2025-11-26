@@ -38,7 +38,6 @@ export function Footer() {
                   className="mx-auto md:mx-0"
                 />
               </div>
-              <p className="text-sm">Analyze any crypto in 10 seconds</p>
             </div>
 
             <div className="flex flex-col sm:flex-row items-center gap-6 text-sm">

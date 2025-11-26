@@ -31,7 +31,7 @@ export function HeroSection() {
           <p className="text-lg text-gray-300 mb-2 max-w-3xl mx-auto">
             CryptoScores shows you the real quality of{" "}
             <span className="text-white font-semibold">
-              7,600+ cryptocurrencies
+              7,000+ cryptocurrencies
             </span>
             , updated daily…
           </p>

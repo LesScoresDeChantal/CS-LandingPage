@@ -75,6 +75,15 @@ export function Header() {
               FAQ
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-[#0666c6] to-[#05b5fb] transition-all group-hover:w-full" />
             </a>
+            <a
+              href="https://cryptoscores.gitbook.io/docs"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm font-medium text-gray-300 hover:text-white transition-colors relative group"
+            >
+              Docs
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-[#0666c6] to-[#05b5fb] transition-all group-hover:w-full" />
+            </a>
           </nav>
 
           {/* CTA Buttons */}

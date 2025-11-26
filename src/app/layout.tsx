@@ -14,7 +14,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "CryptoScores - Analyze any crypto in 10 seconds",
-  description: "Spot opportunities. Avoid traps. Get instant analysis of 7,600+ cryptocurrencies directly inside Telegram.",
+  description:
+    "Spot opportunities. Avoid traps. Get instant analysis of 7,000+ cryptocurrencies directly inside Telegram.",
 };
 
 export default function RootLayout({
