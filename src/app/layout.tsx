@@ -17,6 +17,30 @@ export const metadata: Metadata = {
   title: "CryptoScores - Analyze any crypto in 10 seconds",
   description:
     "Spot opportunities. Avoid traps. Get instant analysis of 7,000+ cryptocurrencies directly inside Telegram.",
+  openGraph: {
+    title: "CryptoScores - Analyze any crypto in 10 seconds",
+    description:
+      "Spot opportunities. Avoid traps. Get instant analysis of 7,000+ cryptocurrencies directly inside Telegram.",
+    url: "https://www.cryptoscores.com",
+    siteName: "CryptoScores",
+    images: [
+      {
+        url: "/images/cryptoScores-02.png",
+        width: 1200,
+        height: 630,
+        alt: "CryptoScores Logo",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "CryptoScores - Analyze any crypto in 10 seconds",
+    description:
+      "Spot opportunities. Avoid traps. Get instant analysis of 7,000+ cryptocurrencies directly inside Telegram.",
+    images: ["/images/cryptoScores-02.png"],
+  },
 };
 
 export default function RootLayout({
