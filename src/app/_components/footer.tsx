@@ -9,7 +9,6 @@ export function Footer() {
           {/* Legal information */}
           <div className="bg-gray-900/30 border border-gray-800 rounded-xl p-6 mb-8">
             <div className="flex items-start gap-3">
-              <span className="text-2xl">🔒</span>
               <div>
                 <h3 className="text-lg font-semibold text-white mb-2">
                   Legal information

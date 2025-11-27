@@ -4,9 +4,11 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import { Menu, X } from "lucide-react";
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -35,13 +37,23 @@ export function Header() {
             href="/"
             className="flex items-center transition-transform hover:scale-105"
           >
+            {/* Logo complet sur desktop */}
             <Image
               src="/images/cryptoScoresVector-02.svg"
               alt="CryptoScores"
               width={120}
               height={20}
-              // className="h-10 w-auto"
               priority
+              className="hidden sm:block"
+            />
+            {/* Icône sur mobile */}
+            <Image
+              src="/images/crypto-scores-icon.svg"
+              alt="CryptoScores"
+              width={40}
+              height={40}
+              priority
+              className="block sm:hidden"
             />
           </Link>
 
@@ -88,19 +100,70 @@ export function Header() {
 
           {/* CTA Buttons */}
           <div className="flex items-center gap-3">
-            {/* <Button
-              variant="ghost"
-              className="hidden md:inline-flex text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 rounded-lg px-4 py-2 transition-all"
+            {/* Hamburger menu button - visible sur mobile et tablette */}
+            <button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="lg:hidden p-2 text-gray-300 hover:text-white transition-colors"
+              aria-label="Toggle menu"
             >
-              Sign in
-            </Button> */}
+              {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+
+            {/* CTA Button - toujours visible */}
             <Button
               asChild
-              className="bg-gradient-to-r from-[#0666c6] to-[#05b5fb] hover:from-[#0555a5] hover:to-[#0499da] text-white font-semibold px-6 py-2.5 rounded-lg shadow-lg shadow-[#0666c6]/25 hover:shadow-[#0666c6]/40 transition-all hover:scale-105"
+              className="bg-gradient-to-r from-[#0666c6] to-[#05b5fb] hover:from-[#0555a5] hover:to-[#0499da] text-white font-semibold px-4 sm:px-6 py-2.5 rounded-lg shadow-lg shadow-[#0666c6]/25 hover:shadow-[#0666c6]/40 transition-all hover:scale-105 text-sm"
             >
               <a href="#pricing">Try it for free</a>
             </Button>
           </div>
+        </div>
+
+        {/* Mobile Menu */}
+        <div
+          className={`lg:hidden overflow-hidden transition-all duration-300 ease-in-out ${
+            mobileMenuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+          }`}
+        >
+          <nav className="px-6 py-4 space-y-4 border-t border-gray-800/50">
+            <a
+              href="#how-it-works"
+              onClick={() => setMobileMenuOpen(false)}
+              className="block text-sm font-medium text-gray-300 hover:text-white transition-colors py-2"
+            >
+              How it works
+            </a>
+            <a
+              href="#categories"
+              onClick={() => setMobileMenuOpen(false)}
+              className="block text-sm font-medium text-gray-300 hover:text-white transition-colors py-2"
+            >
+              Features
+            </a>
+            <a
+              href="#pricing"
+              onClick={() => setMobileMenuOpen(false)}
+              className="block text-sm font-medium text-gray-300 hover:text-white transition-colors py-2"
+            >
+              Pricing
+            </a>
+            <a
+              href="#faq"
+              onClick={() => setMobileMenuOpen(false)}
+              className="block text-sm font-medium text-gray-300 hover:text-white transition-colors py-2"
+            >
+              FAQ
+            </a>
+            <a
+              href="https://cryptoscores.gitbook.io/docs"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setMobileMenuOpen(false)}
+              className="block text-sm font-medium text-gray-300 hover:text-white transition-colors py-2"
+            >
+              Docs
+            </a>
+          </nav>
         </div>
       </header>
     </div>

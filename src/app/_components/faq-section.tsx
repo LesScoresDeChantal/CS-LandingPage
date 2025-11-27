@@ -7,39 +7,121 @@ import {
 
 const faqs = [
   {
+    question: "How do investors typically use CryptoScores?",
+    answer: (
+      <>
+        They first scan their portfolio to see which cryptos are strong or
+        risky. Then they evaluate the projects on their radar. After that, the
+        real fun starts, exploring the market to uncover high-quality
+        opportunities.
+      </>
+    ),
+  },
+  {
     question: "How does the 14-day free trial work?",
-    answer:
-      "Start using CryptoScores immediately with the chosen plan. You can cancel anytime.",
+    answer: (
+      <>
+        Start using CryptoScores immediately with the chosen plan. You can
+        cancel anytime within 14 days. After 14 days your card will be charged
+        monthly.
+      </>
+    ),
   },
   {
     question: "Where does your data come from?",
-    answer:
-      "We aggregate data from multiple verified sources including blockchain explorers, exchanges, GitHub, social media, and security audit firms. All data is cross-referenced for accuracy.",
+    answer: (
+      <>
+        We aggregate data from multiple verified sources including Web3 Data
+        Providers, Crypto Market Analytics, GitHub, social media, and security
+        audit firms. Some of the metrics are created and calculated by us, for
+        example the{" "}
+        <a
+          href="https://cryptoscores.gitbook.io/docs/scores/security/defensive-multi-score"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-[#05b5fb] hover:underline"
+        >
+          Defensive multi-score
+        </a>
+        .
+      </>
+    ),
   },
   {
     question: "How are scores calculated?",
-    answer:
-      "Our proprietary algorithm analyzes 6 key pillars: Technology, Community, Liquidity, Security, Fundamentals, and Opportunity. Each pillar contains multiple metrics weighted by importance.",
+    answer: (
+      <>
+        Our proprietary algorithm analyzes 6 key pillars: Technology, Community,
+        Liquidity, Security, Fundamentals, and Opportunity. Each pillar contains
+        multiple metrics weighted by importance. Each metric compares thousand
+        of cryptos in order to give a precise score.
+      </>
+    ),
   },
   {
-    question: "Can I cancel my subscription at any time?",
-    answer:
-      "Yes, you can cancel your subscription at any time from your account settings. No questions asked, no cancellation fees.",
+    question: "Can I cancel anytime? Do you offer refunds?",
+    answer: (
+      <>
+        Yes. You can cancel your subscription whenever you want. Your
+        subscription will remain valid until its term but you will not be
+        charged anymore. Your 14-day free trial lets you test the tool
+        risk-free. After the trial ends, subscriptions are non-refundable.
+      </>
+    ),
   },
   {
-    question: "Do you offer refunds?",
-    answer:
-      "We offer a 14-day free trial so you can test the service risk-free. After the trial, subscriptions are non-refundable, but you can cancel anytime.",
+    question:
+      "Does CryptoScores work on mobile? Do I need to install anything?",
+    answer: (
+      <>
+        CryptoScores works instantly through Telegram. No app store. No
+        installation. You can access it from any device: mobile, desktop, or
+        tablet.
+      </>
+    ),
   },
   {
-    question: "Are real-time alerts really instant?",
-    answer:
-      "Yes, alerts are sent within seconds of detection. We monitor blockchain activity and market movements 24/7 to keep you informed in real-time.",
+    question: "Is CryptoScores only for pros?",
+    answer: (
+      <>
+        Not at all. It&apos;s designed so that beginners instantly understand
+        whether a crypto looks strong or weak, while advanced investors get deep
+        analytics and metrics. Everyone wins.
+      </>
+    ),
   },
   {
-    question: "Can I use CryptoScores on mobile?",
-    answer:
-      "Yes! CryptoScores works directly through Telegram, which means you can access it from any device - mobile, tablet, or desktop.",
+    question: "How is this different from CoinMarketCap or other tools?",
+    answer: (
+      <>
+        CMC shows raw data.
+        <br />
+        <br />
+        We show interpreted, contextualized, and scored data across 6 pillars,
+        the things that potentially impact price action.
+        <br />
+        <br />
+        You see weakness, strength, momentum, and risk instantly.
+      </>
+    ),
+  },
+  {
+    question: "Do I need to install anything?",
+    answer: (
+      <>
+        No installation, no app store. CryptoScores works instantly through
+        Telegram.
+      </>
+    ),
+  },
+  {
+    question: "Do you track my investments or wallet?",
+    answer: (
+      <>
+        No. We do not track portfolios, wallets, or balances. CryptoScores
+        analyzes projects, not people.
+      </>
+    ),
   },
 ];
 

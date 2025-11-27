@@ -48,7 +48,7 @@ export function HowItWorksSection() {
           {steps.map((step, index) => (
             <div
               key={index}
-              className={`flex flex-col ${
+              className={`flex flex-col-reverse ${
                 index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
               } items-center gap-12 lg:gap-16`}
             >
