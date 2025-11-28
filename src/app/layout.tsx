@@ -68,6 +68,9 @@ export default function RootLayout({
             `,
           }}
         />
+
+        {/* Hotjar */}
+        <Script src="https://t.contentsquare.net/uxa/6029980009fdc.js"></Script>
       </body>
     </html>
   );

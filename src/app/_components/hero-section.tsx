@@ -1,11 +1,76 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 import { ArrowRight, Check } from "lucide-react";
+import { useEffect, useState } from "react";
 
 export function HeroSection() {
+  const [mousePosition, setMousePosition] = useState({ x: 50, y: 50 });
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    // Detect if mobile
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+
+    const handleMouseMove = (e: MouseEvent) => {
+      if (window.innerWidth >= 768) {
+        const x = (e.clientX / window.innerWidth) * 100;
+        const y = (e.clientY / window.innerHeight) * 100;
+        setMousePosition({ x, y });
+      }
+    };
+
+    window.addEventListener("mousemove", handleMouseMove);
+
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener("resize", checkMobile);
+    };
+  }, []);
+
+  const maskEllipse =
+    "mask-[radial-gradient(ellipse_50%_50%_at_50%_45%,#000_40%,transparent_100%)]";
+
   return (
-    <section className="relative min-h-screen flex items-center justify-center bg-black">
-      {/* Subtle grid background */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff0a_1px,transparent_1px),linear-gradient(to_bottom,#ffffff0a_1px,transparent_1px)] bg-[size:64px_64px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_60%,transparent_100%)]" />
+    <section className="relative min-h-screen flex items-center justify-center bg-black overflow-hidden">
+      {/* Enhanced grid background with circular mask */}
+      <div
+        className={cn(
+          "absolute inset-0",
+          "bg-[linear-gradient(to_right,#ffffff15_1px,transparent_1px),linear-gradient(to_bottom,#ffffff15_1px,transparent_1px)]",
+          "bg-size-[64px_64px]",
+          maskEllipse
+        )}
+      />
+
+      {/* Mouse follow spotlight effect - only visible where grid is visible */}
+      <div
+        className={cn(
+          "absolute inset-0 opacity-70 transition-opacity duration-300",
+          maskEllipse
+        )}
+        style={{
+          background: isMobile
+            ? `radial-gradient(circle 800px at 50% 40%, rgba(6, 102, 198, 0.2), transparent 50%)`
+            : `radial-gradient(circle 600px at ${mousePosition.x}% ${mousePosition.y}%, rgba(6, 102, 198, 0.2), transparent 50%)`,
+        }}
+      >
+        {isMobile && (
+          <div
+            className="absolute inset-0 animate-pulse"
+            style={{
+              background: `radial-gradient(circle 600px at 50% 60%, rgba(5, 181, 251, 0.15), transparent 50%)`,
+              animationDuration: "4s",
+            }}
+          />
+        )}
+      </div>
 
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="max-w-5xl mx-auto text-center">
