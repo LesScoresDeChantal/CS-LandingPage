@@ -5,6 +5,17 @@ import { cn } from "@/lib/utils";
 import { Check } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
 
+// Déclare le type pour le Twitter pixel
+declare global {
+  interface Window {
+    twq?: (
+      command: string,
+      eventId: string,
+      params?: { value?: string | null }
+    ) => void;
+  }
+}
+
 interface PricePlan {
   price: number;
   totalYearly: number;
@@ -111,7 +122,17 @@ const plans: Plan[] = [
 ];
 
 export function PricingSection() {
-  const [isYearly, setIsYearly] = useState(true);
+  const [isYearly, setIsYearly] = useState(false);
+
+  const handlePricingClick = (url: string, value: string) => {
+    if (typeof window !== "undefined" && window.twq) {
+      window.twq("event", "tw-qfuhj-qu1p0", {
+        value,
+      });
+    }
+
+    window.open(url, "_blank");
+  };
 
   return (
     <section id="pricing" className="py-24 bg-black">
@@ -199,15 +220,18 @@ export function PricingSection() {
 
               {/* CTA */}
               <Button
-                asChild
-                className="relative w-full rounded-xl font-semibold transition-all bg-white hover:bg-gray-100 text-black py-6"
+                onClick={() => {
+                  const selectedPlan = isYearly ? plan.yearly : plan.monthly;
+                  handlePricingClick(
+                    selectedPlan.url,
+                    `${plan.name.toLocaleLowerCase()}-${
+                      isYearly ? "yearly" : "monthly"
+                    }`
+                  );
+                }}
+                className="relative cursor-pointer w-full rounded-xl font-semibold transition-all bg-white hover:bg-gray-100 text-black py-6"
               >
-                <a
-                  href={isYearly ? plan.yearly.url : plan.monthly.url}
-                  target="_blank"
-                >
-                  {plan.cta}
-                </a>
+                {plan.cta}
               </Button>
             </div>
           ))}
