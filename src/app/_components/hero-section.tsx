@@ -85,7 +85,7 @@ export function HeroSection() {
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
             <span className="text-white">Analyze any crypto in </span>
             <span className="bg-gradient-to-r from-[#0666c6] to-[#05b5fb] bg-clip-text text-transparent">
-              10 seconds.
+              20 seconds.
             </span>
           </h1>
 
