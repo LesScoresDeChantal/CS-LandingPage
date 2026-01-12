@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import Image from 'next/image';
-import { motion } from 'framer-motion';
-import { useState, useEffect } from 'react';
+import Image from "next/image";
+import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
 import {
   Carousel,
   CarouselContent,
@@ -10,24 +10,24 @@ import {
   CarouselNext,
   CarouselPrevious,
   type CarouselApi,
-} from '@/components/ui/carousel';
-import Autoplay from 'embla-carousel-autoplay';
+} from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
 
 const screenshots = [
   {
-    src: '/images/app-screenshots/screen-table.png',
-    alt: 'CryptoScores platform - Data table view',
-    url: 'app.cryptoscores.com/cryptos',
+    src: "/images/app-screenshots/screen-table.png",
+    alt: "CryptoScores platform - Data table view",
+    url: "https://app.cryptoscores.com/cryptos",
   },
   {
-    src: '/images/app-screenshots/screen-detail.png',
-    alt: 'CryptoScores platform - Detail view',
-    url: 'app.cryptoscores.com/cryptos/aave',
+    src: "/images/app-screenshots/screen-detail.png",
+    alt: "CryptoScores platform - Detail view",
+    url: "https://app.cryptoscores.com/cryptos/aave",
   },
   {
-    src: '/images/app-screenshots/screen-detail-scores.png',
-    alt: 'CryptoScores platform - Scores detail view',
-    url: 'app.cryptoscores.com/cryptos/aave',
+    src: "/images/app-screenshots/screen-detail-scores.png",
+    alt: "CryptoScores platform - Scores detail view",
+    url: "https://app.cryptoscores.com/cryptos/aave",
   },
 ];
 
@@ -42,7 +42,7 @@ export function AppPreviewSection() {
 
     setCurrent(api.selectedScrollSnap());
 
-    api.on('select', () => {
+    api.on("select", () => {
       setCurrent(api.selectedScrollSnap());
     });
   }, [api]);
@@ -59,7 +59,7 @@ export function AppPreviewSection() {
             transition={{ duration: 0.5 }}
             className="text-3xl font-bold tracking-tight text-white sm:text-4xl"
           >
-            A powerful platform built for{' '}
+            A powerful platform built for{" "}
             <span className="bg-gradient-to-r from-[#0666c6] to-[#05b5fb] bg-clip-text text-transparent">
               crypto analysis
             </span>
@@ -143,8 +143,8 @@ export function AppPreviewSection() {
                 onClick={() => api?.scrollTo(idx)}
                 className={`h-2 rounded-full transition-all ${
                   idx === current
-                    ? 'w-8 bg-gradient-to-r from-[#0666c6] to-[#05b5fb]'
-                    : 'w-2 bg-gray-600 hover:bg-gray-500'
+                    ? "w-8 bg-gradient-to-r from-[#0666c6] to-[#05b5fb]"
+                    : "w-2 bg-gray-600 hover:bg-gray-500"
                 }`}
                 aria-label={`Go to screenshot ${idx + 1}`}
               />

@@ -82,9 +82,15 @@ export function Header() {
             <Button
               asChild
               variant="outline"
-              className="hidden text-sm font-semibold transition-all sm:inline-flex"
+              className="hidden text-foreground text-sm font-semibold transition-all sm:inline-flex"
             >
-              <Link href="/cryptos">Launch App</Link>
+              <a
+                href="https://app.cryptoscores.com/cryptos"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Launch App
+              </a>
             </Button>
 
             {/* CTA Button - masqué sur mobile, visible sur desktop */}
@@ -140,11 +146,16 @@ export function Header() {
               <Button
                 asChild
                 variant="outline"
-                className="w-full border-gray-700 text-sm font-semibold text-gray-300 transition-all hover:border-gray-500 hover:bg-white/10 hover:text-white"
+                className="w-full  text-sm font-semibold transition-all "
               >
-                <Link href="/cryptos" onClick={() => setMobileMenuOpen(false)}>
+                <a
+                  href="https://app.cryptoscores.com/cryptos"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
                   Launch App
-                </Link>
+                </a>
               </Button>
               <Button
                 asChild
