@@ -3,11 +3,12 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@/components/ui/accordion";
+} from '@/components/ui/accordion';
+import Image from 'next/image';
 
 const faqs = [
   {
-    question: "How do investors typically use CryptoScores?",
+    question: 'How do investors typically use CryptoScores?',
     answer: (
       <>
         They first scan their portfolio to see which cryptos are strong or
@@ -18,7 +19,7 @@ const faqs = [
     ),
   },
   {
-    question: "How does the 14-day free trial work?",
+    question: 'How does the 14-day free trial work?',
     answer: (
       <>
         Start using CryptoScores immediately with the chosen plan. You can
@@ -28,13 +29,13 @@ const faqs = [
     ),
   },
   {
-    question: "Where does your data come from?",
+    question: 'Where does your data come from?',
     answer: (
       <>
         We aggregate data from multiple verified sources including Web3 Data
         Providers, Crypto Market Analytics, GitHub, social media, and security
         audit firms. Some of the metrics are created and calculated by us, for
-        example the{" "}
+        example the{' '}
         <a
           href="https://cryptoscores.gitbook.io/docs/scores/security/defensive-multi-score"
           target="_blank"
@@ -48,7 +49,7 @@ const faqs = [
     ),
   },
   {
-    question: "How are scores calculated?",
+    question: 'How are scores calculated?',
     answer: (
       <>
         Our proprietary algorithm analyzes 6 key pillars: Technology, Community,
@@ -59,7 +60,7 @@ const faqs = [
     ),
   },
   {
-    question: "Can I cancel anytime? Do you offer refunds?",
+    question: 'Can I cancel anytime? Do you offer refunds?',
     answer: (
       <>
         Yes. You can cancel your subscription whenever you want. Your
@@ -71,17 +72,17 @@ const faqs = [
   },
   {
     question:
-      "Does CryptoScores work on mobile? Do I need to install anything?",
+      'Does CryptoScores work on mobile? Do I need to install anything?',
     answer: (
       <>
-        CryptoScores works instantly through Telegram. No app store. No
-        installation. You can access it from any device: mobile, desktop, or
-        tablet.
+        CryptoScores works directly through your browser or in Telegram. No app
+        store. No installation. You can access it from any device: mobile,
+        desktop, or tablet.
       </>
     ),
   },
   {
-    question: "Is CryptoScores only for pros?",
+    question: 'Is CryptoScores only for pros?',
     answer: (
       <>
         Not at all. It&apos;s designed so that beginners instantly understand
@@ -91,7 +92,7 @@ const faqs = [
     ),
   },
   {
-    question: "How is this different from CoinMarketCap or other tools?",
+    question: 'How is this different from CoinMarketCap or other tools?',
     answer: (
       <>
         CMC shows raw data.
@@ -106,7 +107,7 @@ const faqs = [
     ),
   },
   {
-    question: "Do I need to install anything?",
+    question: 'Do I need to install anything?',
     answer: (
       <>
         No installation, no app store. CryptoScores works instantly through
@@ -115,7 +116,7 @@ const faqs = [
     ),
   },
   {
-    question: "Do you track my investments or wallet?",
+    question: 'Do you track my investments or wallet?',
     answer: (
       <>
         No. We do not track portfolios, wallets, or balances. CryptoScores
@@ -123,14 +124,37 @@ const faqs = [
       </>
     ),
   },
+  {
+    question: 'Is CryptoScores’ Telegram bot still available?',
+    answer: (
+      <>
+        <p>Yes, we kept it alive for you! Scan this QR code to open it</p>
+        <div className="flex flex-col items-center gap-4">
+          <a
+            href="https://t.me/CryptoScoresBot"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Image
+              src="/images/qr-code-tg-bot.png"
+              alt="Telegram Bot QR Code - @CRYPTOSCORESBOT"
+              width={200}
+              height={200}
+              className="rounded-lg"
+            />
+          </a>
+        </div>
+      </>
+    ),
+  },
 ];
 
 export function FAQSection() {
   return (
-    <section id="faq" className="py-24 bg-gray-950">
+    <section id="faq" className="bg-gray-950 py-24">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-3xl mx-auto text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+        <div className="mx-auto mb-16 max-w-3xl text-center">
+          <h2 className="mb-4 text-3xl font-bold text-white sm:text-4xl">
             Frequently Asked Questions
           </h2>
           <p className="text-lg text-gray-400">
@@ -138,18 +162,18 @@ export function FAQSection() {
           </p>
         </div>
 
-        <div className="max-w-3xl mx-auto">
+        <div className="mx-auto max-w-3xl">
           <Accordion type="single" collapsible className="space-y-4">
             {faqs.map((faq, index) => (
               <AccordionItem
                 key={index}
                 value={`item-${index}`}
-                className="bg-gray-900/30 border border-gray-800 rounded-xl px-6 data-[state=open]:border-[#0666c6]/50"
+                className="rounded-xl border border-gray-800 bg-gray-900/30 px-6 data-[state=open]:border-[#0666c6]/50"
               >
-                <AccordionTrigger className="text-white hover:text-[#05b5fb] text-left">
+                <AccordionTrigger className="text-left text-white hover:text-[#05b5fb]">
                   {faq.question}
                 </AccordionTrigger>
-                <AccordionContent className="text-gray-400 leading-relaxed">
+                <AccordionContent className="leading-relaxed text-gray-400">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>
@@ -158,7 +182,7 @@ export function FAQSection() {
 
           <div className="mt-12 text-center">
             <p className="text-gray-400">
-              Can&apos;t find the answer to your question?{" "}
+              Can&apos;t find the answer to your question?{' '}
               <a
                 href="mailto:contact@cryptoscores.com"
                 className="text-[#05b5fb] hover:underline"

@@ -1,37 +1,37 @@
-import { Card } from "@/components/ui/card";
-import { Zap, Shield, Search, Target } from "lucide-react";
+import { Card } from '@/components/ui/card';
+import { Zap, Shield, Search, Target } from 'lucide-react';
 
 const features = [
   {
     icon: Zap,
-    title: "Spot high-potential cryptos before the crowd",
+    title: 'Spot high-potential cryptos before the crowd',
   },
   {
     icon: Shield,
-    title: "Avoid risky or weak projects",
+    title: 'Avoid risky or weak projects',
   },
   {
     icon: Search,
-    title: "Check the quality of any crypto in seconds",
+    title: 'Check the quality of any crypto in seconds',
   },
   {
     icon: Target,
-    title: "Focus only on the facts that truly matter",
+    title: 'Focus only on the facts that truly matter',
   },
 ];
 
 export function FeaturesSection() {
   return (
-    <section id="features" className="py-24 bg-gray-950">
+    <section id="features" className="bg-gray-950 py-24">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-3xl mx-auto text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
+        <div className="mx-auto mb-16 max-w-3xl text-center">
+          <h2 className="mb-6 text-3xl font-bold text-white sm:text-4xl">
             Why Investors Use CryptoScores
           </h2>
-          <p className="text-xl text-gray-400 mb-4">
+          <p className="mb-4 text-xl text-gray-400">
             Investors are done juggling 25 tabs and scattered tools.
           </p>
-          <p className="text-2xl text-white font-semibold flex flex-col gap-2">
+          <p className="flex flex-col gap-2 text-2xl font-semibold text-white">
             <span>They want one place that gathers all the data they need</span>
             <span className="text-[#05b5fb]">
               …and actually scores it for them.
@@ -39,21 +39,21 @@ export function FeaturesSection() {
           </p>
         </div>
 
-        <div className="max-w-3xl mx-auto mb-12">
-          <p className="text-lg text-gray-300 mb-8">
+        <div className="mx-auto mb-12 max-w-3xl">
+          <p className="mb-8 text-lg text-gray-300">
             With CryptoScores, they can:
           </p>
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid gap-6 md:grid-cols-2">
             {features.map((feature, index) => (
               <Card
                 key={index}
-                className="bg-gray-900/50 border-gray-800 hover:border-[#0666c6]/50 transition-colors p-6"
+                className="border-gray-800 bg-gray-900/50 p-6 transition-colors hover:border-[#0666c6]/50"
               >
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-lg bg-gradient-to-r from-[#0666c6] to-[#05b5fb] flex items-center justify-center shrink-0">
-                    <feature.icon className="w-6 h-6 text-white" />
+                  <div className="flex size-12 shrink-0 items-center justify-center rounded-lg bg-gradient-to-r from-[#0666c6] to-[#05b5fb]">
+                    <feature.icon className="size-6 text-white" />
                   </div>
-                  <p className="text-lg text-gray-200 leading-relaxed pt-2">
+                  <p className="pt-2 text-lg leading-relaxed text-gray-200">
                     {feature.title}
                   </p>
                 </div>
@@ -63,7 +63,7 @@ export function FeaturesSection() {
         </div>
 
         <div className="text-center">
-          <p className="text-xl sm:text-2xl font-semibold text-white">
+          <p className="text-xl font-semibold text-white sm:text-2xl">
             Less emotion. More clarity. Better decisions.
           </p>
         </div>

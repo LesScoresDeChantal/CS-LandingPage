@@ -1,71 +1,71 @@
-import Image from "next/image";
+import Image from 'next/image';
 
-interface Step {
+type Step = {
   number: string;
   title: string;
   description: string;
   image: string;
   imageUrl?: string;
-}
+};
 
 const steps: Step[] = [
   {
-    number: "1",
-    title: "Open Telegram",
-    description: "Start a chat with your CryptoScores bot.",
-    image: "/images/how-it-works/hiw-1.png",
-    imageUrl: "https://t.me/CryptoScoresBot?start",
+    number: '1',
+    title: 'Open Telegram',
+    description: 'Start a chat with your CryptoScores bot.',
+    image: '/images/how-it-works/hiw-1.png',
+    imageUrl: 'https://t.me/CryptoScoresBot?start',
   },
   {
-    number: "2",
-    title: "Ask for a crypto",
+    number: '2',
+    title: 'Ask for a crypto',
     description:
-      "You can ask for a crypto with the search mode of your choice: Name, Symbol, or Coingecko ID.",
-    image: "/images/how-it-works/hiw-2.webp",
-    imageUrl: "https://t.me/CryptoScoresBot?start",
+      'You can ask for a crypto with the search mode of your choice: Name, Symbol, or Coingecko ID.',
+    image: '/images/how-it-works/hiw-2.webp',
+    imageUrl: 'https://t.me/CryptoScoresBot?start',
   },
   {
-    number: "3",
-    title: "Get instant analysis",
+    number: '3',
+    title: 'Get instant analysis',
     description:
-      "Receive a complete dashboard with scores for community, liquidity, momentum, technology, security, tokenomics, and alerts.",
-    image: "/images/how-it-works/hiw-3.webp",
-    imageUrl: "https://t.me/CryptoScoresBot?start",
+      'Receive a complete dashboard with scores for community, liquidity, momentum, technology, security, tokenomics, and alerts.',
+    image: '/images/how-it-works/hiw-3.webp',
+    imageUrl: 'https://t.me/CryptoScoresBot?start',
   },
 ];
 
 export function HowItWorksSection() {
   return (
-    <section id="how-it-works" className="py-24 bg-gray-950">
+    <section id="how-it-works" className="bg-gray-950 py-24">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-3xl mx-auto text-center mb-20">
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+        <div className="mx-auto mb-20 max-w-3xl text-center">
+          <h2 className="mb-4 text-3xl font-bold text-white sm:text-4xl">
             How it works <span className="text-[#05b5fb]">(3 steps)</span>
           </h2>
         </div>
 
-        <div className="max-w-6xl mx-auto space-y-24">
+        <div className="mx-auto max-w-6xl space-y-24">
           {steps.map((step, index) => (
             <div
               key={index}
               className={`flex flex-col-reverse ${
-                index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
+                index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'
               } items-center gap-12 lg:gap-16`}
             >
               {/* Image */}
               <div className="flex-1">
                 <div>
-                  <div className="relative rounded-2xl overflow-hidden border border-gray-800 bg-gray-900/50 shadow-2xl shadow-[#0666c6]/10">
-                    <a href={step.imageUrl} target="_blank">
+                  <div className="relative overflow-hidden rounded-2xl border border-gray-800 bg-gray-900/50 shadow-2xl shadow-[#0666c6]/10">
+                    <a href={step.imageUrl} target="_blank" rel="noreferrer">
                       <Image
                         src={step.image}
                         alt={step.title}
                         width={600}
                         height={400}
-                        className={`w-full h-auto ${
+                        className={`h-auto w-full ${
                           index === 0
-                            ? "object-contain max-h-[400px]"
-                            : "object-cover"
+                            ? 'max-h-[400px] object-contain'
+                            : 'object-cover'
                         }`}
                       />
                     </a>
@@ -74,16 +74,16 @@ export function HowItWorksSection() {
               </div>
 
               {/* Content */}
-              <div className="flex-1 w-full">
-                <div className="flex items-center gap-4 mb-6">
-                  <div className="w-14 h-14 rounded-full bg-gradient-to-r from-[#0666c6] to-[#05b5fb] flex items-center justify-center text-2xl font-bold text-white shrink-0">
+              <div className="w-full flex-1">
+                <div className="mb-6 flex items-center gap-4">
+                  <div className="flex size-14 shrink-0 items-center justify-center rounded-full bg-gradient-to-r from-[#0666c6] to-[#05b5fb] text-2xl font-bold text-white">
                     {step.number}
                   </div>
-                  <h3 className="text-2xl sm:text-3xl font-bold text-white">
+                  <h3 className="text-2xl font-bold text-white sm:text-3xl">
                     {step.title}
                   </h3>
                 </div>
-                <p className="text-lg text-gray-300 leading-relaxed">
+                <p className="text-lg leading-relaxed text-gray-300">
                   {step.description}
                 </p>
               </div>

@@ -1,32 +1,36 @@
 import {
+  AnimatedParticles,
   Header,
   HeroSection,
   FeaturesSection,
-  HowItWorksSection,
+  AppPreviewSection,
+  DataProvidersSection,
   AnalysisCategoriesSection,
   TestimonialsSection,
   MomentsSection,
   EducationSection,
   PricingSection,
   FAQSection,
-  CTASection,
   Footer,
 } from "./_components";
 
-export default function LandingPage() {
+export default function HomePage() {
   return (
-    <div className="min-h-screen bg-black">
+    <div className="relative min-h-screen bg-black">
+      {/* Animated particles background */}
+      <AnimatedParticles />
+
       <Header />
       <HeroSection />
       <FeaturesSection />
-      <HowItWorksSection />
+      <AppPreviewSection />
+      <DataProvidersSection />
       <AnalysisCategoriesSection />
       <TestimonialsSection />
       <MomentsSection />
       <EducationSection />
-      <PricingSection />
+      <PricingSection className="py-24" />
       <FAQSection />
-      <CTASection />
       <Footer />
     </div>
   );

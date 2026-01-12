@@ -1,32 +1,32 @@
-import { Separator } from "@/components/ui/separator";
-import Image from "next/image";
+import { Separator } from '@/components/ui/separator';
+import Image from 'next/image';
 
 export function Footer() {
   return (
-    <footer className="py-12 bg-black border-t border-gray-900">
+    <footer className="border-t border-gray-900 bg-black py-12">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
+        <div className="mx-auto max-w-7xl">
           {/* Legal information */}
-          <div className="bg-gray-900/30 border border-gray-800 rounded-xl p-6 mb-8">
+          <div className="mb-8 rounded-xl border border-gray-800 bg-gray-900/30 p-6">
             <div className="flex items-start gap-3">
               <div>
-                <h3 className="text-lg font-semibold text-white mb-2">
+                <h3 className="mb-2 text-lg font-semibold text-white">
                   Legal information
                 </h3>
                 <p className="text-gray-400">
-                  CryptoScores provides{" "}
+                  CryptoScores provides{' '}
                   <span className="font-semibold text-white">
                     educational information only
                   </span>
                   .
                 </p>
-                <p className="text-gray-500 mt-1">No investment advice.</p>
+                <p className="mt-1 text-gray-500">No investment advice.</p>
               </div>
             </div>
           </div>
 
           {/* Footer content */}
-          <div className="flex flex-col md:flex-row justify-between items-center gap-6 text-gray-500">
+          <div className="flex flex-col items-center justify-between gap-6 text-gray-500 md:flex-row">
             <div className="text-center md:text-left">
               <div className="mb-2">
                 <Image
@@ -39,25 +39,45 @@ export function Footer() {
               </div>
             </div>
 
-            <div className="flex flex-col sm:flex-row items-center gap-6 text-sm">
+            <div className="flex flex-col items-center gap-6 text-sm sm:flex-row">
+              <a
+                href="https://www.linkedin.com/in/chantallang/"
+                className="transition-colors hover:text-[#05b5fb]"
+              >
+                CryptoScores' Founder
+              </a>
+              <Separator
+                orientation="vertical"
+                className="hidden h-4 bg-gray-800 sm:block"
+              />
               <a
                 href="mailto:contact@cryptoscores.com"
-                className="hover:text-[#05b5fb] transition-colors"
+                className="transition-colors hover:text-[#05b5fb]"
               >
                 contact@cryptoscores.com
               </a>
               <Separator
                 orientation="vertical"
-                className="hidden sm:block h-4 bg-gray-800"
+                className="hidden h-4 bg-gray-800 sm:block"
               />
-              <a href="#" className="hover:text-[#05b5fb] transition-colors">
+              <a
+                href="/pdfs/CryptoScores Terms of Services V2511.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="transition-colors hover:text-[#05b5fb]"
+              >
                 Terms of Service
               </a>
               <Separator
                 orientation="vertical"
-                className="hidden sm:block h-4 bg-gray-800"
+                className="hidden h-4 bg-gray-800 sm:block"
               />
-              <a href="#" className="hover:text-[#05b5fb] transition-colors">
+              <a
+                href="/pdfs/CryptoScores Legal Notice V2511.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="transition-colors hover:text-[#05b5fb]"
+              >
                 Privacy Policy
               </a>
             </div>
