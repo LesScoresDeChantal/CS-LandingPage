@@ -9,6 +9,13 @@ import { Menu, X } from "lucide-react";
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
+  const handleLaunchAppClick = () => {
+    if (typeof window !== "undefined" && window.twq) {
+      window.twq("event", "tw-qfuhj-r0jj9");
+    }
+    window.open("https://app.cryptoscores.com/cryptos", "_blank");
+  };
+
   return (
     <div className="pointer-events-none fixed inset-x-0 top-0 z-50 px-4 pt-4 sm:px-6 lg:px-8">
       <header
@@ -80,17 +87,11 @@ export function Header() {
 
             {/* Launch App Button - masqué sur mobile */}
             <Button
-              asChild
+              onClick={handleLaunchAppClick}
               variant="outline"
               className="hidden text-foreground text-sm font-semibold transition-all sm:inline-flex"
             >
-              <a
-                href="https://app.cryptoscores.com/cryptos"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Launch App
-              </a>
+              Launch App
             </Button>
 
             {/* CTA Button - masqué sur mobile, visible sur desktop */}
@@ -144,18 +145,14 @@ export function Header() {
             {/* Mobile CTA Buttons */}
             <div className="space-y-3 border-t border-gray-800/50 pt-4">
               <Button
-                asChild
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  handleLaunchAppClick();
+                }}
                 variant="outline"
                 className="w-full  text-sm font-semibold transition-all "
               >
-                <a
-                  href="https://app.cryptoscores.com/cryptos"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  Launch App
-                </a>
+                Launch App
               </Button>
               <Button
                 asChild
