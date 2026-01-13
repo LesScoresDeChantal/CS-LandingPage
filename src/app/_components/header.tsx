@@ -6,12 +6,30 @@ import Link from "next/link";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 
+// Déclare le type pour le Twitter pixel et Google Analytics
+declare global {
+  // eslint-disable-next-line @typescript-eslint/consistent-type-definitions
+  interface Window {
+    twq?: (
+      command: string,
+      eventId: string,
+      params?: { value?: string | null },
+    ) => void;
+    dataLayer?: Array<Record<string, unknown>>;
+  }
+}
+
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const handleLaunchAppClick = () => {
     if (typeof window !== "undefined" && window.twq) {
       window.twq("event", "tw-qfuhj-r0jj9");
+    }
+    if (typeof window !== "undefined" && window.dataLayer) {
+      window.dataLayer.push({
+        event: "clicLaunchApp",
+      });
     }
     window.open("https://app.cryptoscores.com/cryptos", "_blank");
   };

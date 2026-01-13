@@ -6,7 +6,7 @@ import { Check } from "lucide-react";
 import { useState, useEffect, useRef, Suspense } from "react";
 import { useQueryState } from "nuqs";
 
-// Déclare le type pour le Twitter pixel
+// Déclare le type pour le Twitter pixel et Google Analytics
 declare global {
   // eslint-disable-next-line @typescript-eslint/consistent-type-definitions
   interface Window {
@@ -14,6 +14,12 @@ declare global {
       command: string,
       eventId: string,
       params?: { value?: string | null },
+    ) => void;
+    dataLayer?: Array<Record<string, unknown>>;
+    gtag?: (
+      command: string,
+      action: string,
+      params?: Record<string, unknown>,
     ) => void;
   }
 }
@@ -173,6 +179,12 @@ function PricingSectionContent({ className }: { className?: string }) {
     if (typeof window !== "undefined" && window.twq) {
       window.twq("event", "tw-qfuhj-qu1p0", {
         value,
+      });
+    }
+
+    if (typeof window !== "undefined" && window.gtag) {
+      window.gtag("event", "conversion", {
+        send_to: "AW-17532441676/pNK5CJeRpeIbEMyoj6hB",
       });
     }
 
