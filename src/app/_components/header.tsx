@@ -16,6 +16,11 @@ declare global {
       params?: { value?: string | null },
     ) => void;
     dataLayer?: Array<Record<string, unknown>>;
+    gtag?: (
+      command: string,
+      action: string,
+      params?: Record<string, unknown>,
+    ) => void;
   }
 }
 
@@ -26,9 +31,9 @@ export function Header() {
     if (typeof window !== "undefined" && window.twq) {
       window.twq("event", "tw-qfuhj-r0jj9");
     }
-    if (typeof window !== "undefined" && window.dataLayer) {
-      window.dataLayer.push({
-        event: "clicLaunchApp",
+    if (typeof window !== "undefined" && window.gtag) {
+      window.gtag("event", "conversion", {
+        send_to: "AW-17532441676/q8S0CIeJpuIbEMyoj6hB",
       });
     }
     window.open("https://app.cryptoscores.com/cryptos", "_blank");
