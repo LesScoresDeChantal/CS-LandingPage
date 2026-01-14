@@ -1,77 +1,82 @@
-'use client';
+"use client";
 
-import Image from 'next/image';
-import { motion } from 'framer-motion';
+import Image from "next/image";
+import { motion } from "framer-motion";
 
 const providers = [
   {
-    name: 'Artemis',
-    logo: '/images/sources-logo/Artemis_id3FEaLHLd_0.png',
-    darkText: true,
-  },
-  {
-    name: 'CoinGecko',
-    logo: '/images/sources-logo/CGAPI-Lockup@2x.png',
-    darkText: true,
-  },
-  {
-    name: 'Chainlink',
-    logo: '/images/sources-logo/Chainlink Ecosystem - Logo.png',
+    name: "Artemis",
+    logo: "/images/sources-logo/Artemis-transparent.png",
     darkText: false,
   },
   {
-    name: 'CryptoRank',
-    logo: '/images/sources-logo/CryptoRank - Logo.png',
-    darkText: true,
-  },
-  {
-    name: 'DefiLlama',
-    logo: '/images/sources-logo/defillama.png',
+    name: "CoinGecko",
+    logo: "/images/sources-logo/CoingeckoAPI-transparent.png",
     darkText: false,
   },
   {
-    name: 'De.Fi',
-    logo: '/images/sources-logo/De.Fi - Logo .png',
-    darkText: true,
-  },
-  {
-    name: 'DropsTab',
-    logo: '/images/sources-logo/DropsTab - Logo.png',
-    darkText: true,
-  },
-  {
-    name: 'GitHub',
-    logo: '/images/sources-logo/GitHub_Lockup_Light.png',
+    name: "Chainlink",
+    logo: "/images/sources-logo/ChainlinkEcosystem-transparent.png",
     darkText: false,
   },
   {
-    name: 'Google Trends',
-    logo: '/images/sources-logo/Google Trends - Logo .png',
-    darkText: true,
+    name: "CryptoRank",
+    logo: "/images/sources-logo/CryptoRank - Logo.png",
+    darkText: false,
   },
   {
-    name: 'LunarCrush',
-    logo: '/images/sources-logo/LunarCrush - Logo.png',
-    darkText: true,
+    name: "DefiLlama",
+    logo: "/images/sources-logo/Defillama-transparent.svg",
+    darkText: false,
   },
   {
-    name: 'Stack.Money',
-    logo: '/images/sources-logo/StackMoney.png',
-    darkText: true,
+    name: "De.Fi",
+    logo: "/images/sources-logo/De.Fi-Transparent.png",
+    darkText: false,
   },
   {
-    name: 'TokenMetrics',
-    logo: '/images/sources-logo/TokenMetrics - Logo.png',
-    darkText: true,
+    name: "DropsTab",
+    logo: "/images/sources-logo/dropstab_transparent.png",
+    darkText: false,
   },
   {
-    name: 'TwitterScore',
-    logo: '/images/sources-logo/TwitterScore - Logo.png',
-    darkText: true,
+    name: "GitHub",
+    logo: "/images/sources-logo/GitHub-transparent.svg",
+    darkText: false,
   },
   {
-    name: 'X (Twitter)',
-    logo: '/images/sources-logo/x-logo-white.png',
+    name: "Google Trends",
+    logo: "/images/sources-logo/GoogleTrends-transparent.png",
+    darkText: false,
+  },
+  {
+    name: "LunarCrush",
+    logo: "/images/sources-logo/LunarCrush-transparent.png",
+    darkText: false,
+  },
+  {
+    name: "Stack.Money",
+    logo: "/images/sources-logo/StackMoney-transparent.png",
+    darkText: false,
+  },
+  {
+    name: "TokenMetrics",
+    logo: "/images/sources-logo/TokenMetrics-transparent.png",
+    darkText: false,
+  },
+  {
+    name: "TradingView",
+    logo: "/images/sources-logo/Tradingview-transparent.svg",
+    darkText: false,
+  },
+  {
+    name: "TwitterScore",
+    logo: "/images/sources-logo/TwitterScore-transparent.png",
+    darkText: false,
+  },
+  {
+    name: "X (Twitter)",
+    logo: "/images/sources-logo/X-Transparent.png",
     darkText: false,
   },
 ];
@@ -89,7 +94,7 @@ export function DataProvidersSection() {
             transition={{ duration: 0.5 }}
             className="text-3xl font-bold tracking-tight text-white sm:text-4xl"
           >
-            Powered by{' '}
+            Powered by{" "}
             <span className="bg-gradient-to-r from-[#0666c6] to-[#05b5fb] bg-clip-text text-transparent">
               trusted data sources
             </span>
@@ -126,7 +131,7 @@ export function DataProvidersSection() {
               >
                 <div
                   className={`flex h-20 items-center justify-center rounded-lg border border-gray-800/50 p-3 transition-all duration-300 hover:border-gray-700 hover:shadow-lg hover:shadow-[#0666c6]/10 ${
-                    provider.darkText ? 'bg-white/95' : 'bg-gray-900/50'
+                    provider.darkText ? "bg-white/95" : "bg-gray-900/50"
                   }`}
                 >
                   <div className="relative h-full w-full">
